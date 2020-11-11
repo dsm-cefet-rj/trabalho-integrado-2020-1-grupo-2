@@ -1,0 +1,1 @@
+// Utilizado pelo Redux
