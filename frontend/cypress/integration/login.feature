@@ -3,8 +3,8 @@ Funcionalidade: Login
 	Contexto:
 		Dado que o usuário está na tela Entrar
 			E temos um usuário cadastrado
-			|	id	| nome			    |	senha				|
-			|	1	| Roberto			|	abcdxyz234			|
+			|	id	|	nome			|	senha		|
+			|	1	|	Roberto			|	abcdxyz234	|
     
 	Cenário: O usuário insere login e senha válidos, corretos e correspondentes
 		Dado que o usuário inseriu nome e sua senha cadastrados e correspondentes de uma mesma conta
