@@ -1,5 +1,5 @@
 # language: pt
-Funcionalidade: Conta
+Funcionalidade: Retorna a tela anterior
 
   Contexto:
     Dado que o usuário logado está em uma das telas
