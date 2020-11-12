@@ -2,28 +2,22 @@ Funcionalidade: Criar Nova Conta
 
     Visitante acessa Tela 01 - Home e clica em Nova Conta para prosseguir e criar conta
     
-
     Contexto:
-    Dado que o usuario esta na Tela "Home"
-        E não está cadastrado
-        
+        Dado que o usuario esta na Tela Home
+            E não está cadastrado
 
-    Cenário: Criar conta
-        Dado que é exibida a tela Home
-        Quando clico no botão criar conta
-        Então a tela de cadastramento de nova conta é exibida
+    Cenário: Usuário sem cadastro tenta criar conta entra com Nome, E-mail, Senha e Confirmar Senha válidos e tenta entrar
+        Dado que o usuário inseriu todos os dados corretamente
+        Quando ele clica no botão Criar Conta
+        Então sua conta é criada
+        E a tela CriarNovaContaSucesso é exibida
 
-    Cenário: Usuário sem cadastro tenta criar conta entra com Nome, E-mail, Senha e Confirmar Senha corretos e tenta entrar
-        Dado que o usuário inseriu todos os dados corretamente,
-        Quando clica no botão Criar Conta,
-        Então sua conta é criada e é redirecionado para página de Cadastro com Sucesso.
+    Cenário: Usuário tenta criar conta com Nome ou E-mail ou Senha ou Confirmar Senha inválidos
+        Dado que o usuário inseriu um ou mais dados inválidos
+        Quando ele clica em Criar Conta
+        Então recebe uma mensagem informando que a conta não foi criada com sucesso
 
-    Cenário: Usuário com ou sem cadastro tenta criar conta com Nome ou E-mail ou Senha ou Confirmar Senha incorretos
-        Dado que o usuário inseriu um ou mais * Dados inválidos,
-        Quando clica em “Criar Conta”,
-        Então recebe uma mensagem de Erro.
-
-    Cenário: Usuário com cadastro tenta criar conta com Nome, E-mail, Senha e Confirmar Senha corretos e tenta entrar
-        Dado que o usuário inseriu * Dados pertencentes a outro usuário,
-        Quando clica em “Entrar”,
-        Então recebe mensagem de Usuário já cadastrado.
+    Cenário: Usuári tenta criar conta com E-mail já cadastrado
+        Dado que o usuário inseriu E-mail pertencentes a um usuário já cadastrado
+        Quando ele clica em Entrar
+        Então recebe mensagem de Usuário já cadastrado
