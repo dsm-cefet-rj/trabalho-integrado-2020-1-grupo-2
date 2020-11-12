@@ -1,6 +1,8 @@
 # language: pt
 Funcionalidade: Dashboard
 
+	Apresenta uma lista de cidades selecionadas e/ou salvas pelo usuário, permitindoq ue ele edite seus detalhes.
+
 	Cenário: Exibir listagem de cidades
 		Dado que o usuário está logado
 		Quando a tela de Dashboard é acessada
