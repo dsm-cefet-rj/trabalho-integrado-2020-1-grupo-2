@@ -2,7 +2,7 @@
 Funcionalidade: Retorna a tela anterior
 
   Contexto:
-    Dado que o usuário está em uma das telas
+    Dado que o usuário está visualizando das telas
       |tela| nome                   |
       |2   | CriarNovaConta         |
       |3   | CriarNovaContaSucesso  |
@@ -15,6 +15,5 @@ Funcionalidade: Retorna a tela anterior
       |10  | NotaCidade             |
       
       Cenário: usuário quer retornar a pagina anterior
-              Dado que está visualizando uma das telas
-              Quando clica no ícone de voltar
+              Quando o usuário clica no ícone de voltar
               Então retorna a tela que estava visualizando anteriormente
