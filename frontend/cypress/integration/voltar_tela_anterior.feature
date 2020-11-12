@@ -15,6 +15,6 @@ Funcionalidade: Retorna a tela anterior
       |10  | NotaCidade             |
       
       Cenário: usuário quer retornar a pagina anterior
-              Dado que está em uma das telas
+              Dado que está visualizando uma das telas
               Quando clica no ícone de voltar
-              Então retorna a pagina anterior
+              Então retorna a tela que estava visualizando anteriormente
