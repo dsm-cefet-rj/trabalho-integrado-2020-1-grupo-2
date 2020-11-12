@@ -29,3 +29,4 @@ Funcionalidade: Login
 	Cenário: Cadastrar nova conta
 		Quando o usuário clica no botão Cadastrar
 		Então a tela CriarNovaConta será carregada
+		
