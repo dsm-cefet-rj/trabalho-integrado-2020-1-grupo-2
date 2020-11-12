@@ -4,6 +4,8 @@ Funcionalidade: Criar Nova Conta
     
 
     Contexto:
+    Dado que o usuario esta na Tela "Home"
+        E não está cadastrado
         
 
     Cenário: Criar conta
