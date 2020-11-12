@@ -1,4 +1,4 @@
-Funcionalidade: Editar Notas
+Funcionalidade: Confirmar se a conta foi criada com sucesso
 	Um usuário acabou de cadastrar uma nova conta válida com sucesso e o sistema está dando feedback para ele
 
 	Cenário: Tela de conta criada com sucesso é exibida
