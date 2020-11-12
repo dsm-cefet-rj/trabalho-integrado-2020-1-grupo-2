@@ -16,7 +16,7 @@ Funcionalidade: Criar Nova Conta
         Quando ele clica em Criar Conta
         Então recebe uma mensagem informando que a conta não foi criada com sucesso
 
-    Cenário: Usuári tenta criar conta com E-mail já cadastrado
+    Cenário: Usuário tenta criar conta com E-mail já cadastrado
         Dado que o usuário inseriu E-mail pertencentes a um usuário já cadastrado no sistema
         Quando ele clica em Entrar
         Então recebe mensagem de Usuário já cadastrado
