@@ -8,7 +8,7 @@ Funcionalidade: Criar Nova Conta
     Cenário: Usuário tenta criar conta com Nome, E-mail, Senha e Confirmar Senha válidos e E-mail não cadastrado no sistema
         Dado que o usuário inseriu todos os dados corretamente
         Quando ele clica no botão Criar Conta
-        Então sua conta é criada
+        Então sua conta é criada e cadsatrada no sistema
         E a tela CriarNovaContaSucesso é exibida
 
     Cenário: Usuário tenta criar conta com Nome ou E-mail ou Senha ou Confirmar Senha inválidos
