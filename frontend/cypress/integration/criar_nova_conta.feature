@@ -1,6 +1,6 @@
 Funcionalidade: Criar Nova Conta
 
-    Visitante acessa Tela 01 - Home e clica em Nova Conta para prosseguir e criar conta
+    Visitante acessa a tela Home e clica em Nova Conta para prosseguir e criar conta
     
     Contexto:
         Dado que o usuario está na Tela Home
