@@ -9,7 +9,6 @@ Funcionalidade: Logout
       |9   | NotasCidade            |
       |10  | NotaCidade             |
       
-      Cenário: usuário quer sair da sua conta
-              Dado que está em uma das telas
-              Quando clica no ícone de logout
-              Então é desconectado da conta
+      Cenário: Usuário quer encerrar a sessão de sua conta
+              Quando o usuário clica no ícone de logout
+              Então ele é desconectado da conta
