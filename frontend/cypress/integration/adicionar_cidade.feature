@@ -1,31 +1,31 @@
- 
 # language: pt
 Funcionalidade: Adicionar cidade
+		
+ Cenário: Buscar uma cidade válida e existente no sistema
+  Dado que o usuário está na tela AdicionarCidade
+  E inseriu o nome de uma cidade válido
+  Quando ele clica no ícone de buscar
+  Então resultados correspondentes serão exibidos
 
-        Cenário: Botão de Adicionar cidade no Dashboard
-                Dado que o usuário está na tela de Dashboard
-                Quando ele clica no botão de Adicionar cidade
-                Então ele é direcionado para a tela AdicionarCidade
-                
-                
-        Cenário: Buscar uma cidade válida
-                Dado que o usuário está na tela AdicionarCidade
-                E inseriu o nome da cidade que deseja,
-                E a cidade consta nos resultados da busca
-                Quando apertar no ícone de buscar,
-                Então resultados correspondentes serão exibidos.
-        
-        
-        Cenário: Buscar uma cidade inválida
-                Dado que o usuário está na tela AdicionarCidade
-                E inseriu o nome da cidade que deseja
-                E a cidade não consta nos resultados da busca
-                Quando apertar no ícone de buscar
-                Então usuário será notificado que a cidade não foi encontrada
-                
-        Cenário: Usuário adiciona um resultado de busca ao Dashboard
-                Dado que o usuário está na tela AdicionarCidade
-                E a busca do usuário retornou um ou mais resultados válidos,
-                Quando o usuário clica em um dos resultados,
-                Então a cidade daquele resultado é adicionada ao dashboard
-                E o usuario será redirecionado para a tela Dashboard
+ Cenário: Buscar uma cidade válida e não existente no sistema
+  Dado que o usuário está na tela AdicionarCidade
+  E inseriu o nome de uma cidade válido
+  E nenhuma cidade correspondente consta no sistema
+  Quando ele clica no ícone de buscar
+  Então nenhuma cidade será exibida no resultado da busca
+
+ # A única indicação de limitação do texto de busca da cidade é a quantidade de caracteres
+ # porém a documentação não indica se o usuário será capaz de ultrapassaar esse limite
+ # por isso consideramos que essa ação é possível e deve ser tratada.
+ Cenário: Buscar uma cidade inválida
+  Dado que o usuário está na tela AdicionarCidade
+  E inseriu o nome de uma cidade inválido
+  Quando ele clica no ícone de buscar
+  Então usuário será notificado que inseriu uma busca inválida
+
+ Cenário: Usuário adiciona um resultado de busca ao Dashboard
+  Dado que o usuário está na tela AdicionarCidade
+  E realizou uma busca que retornou um ou mais resultados válidos,
+  Quando o usuário clica em um dos resultados,
+  Então a cidade daquele resultado é adicionada ao dashboard
+  E a tela Dashboard é exibida
