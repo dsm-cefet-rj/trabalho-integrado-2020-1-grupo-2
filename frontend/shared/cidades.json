@@ -1,0 +1,10 @@
+{
+  "cidades": [
+    {
+      "id": 123,
+      "latitude": 123,
+      "longitude": 123,
+      "name": "Rio de Janeiro"
+    }
+  ]
+}
