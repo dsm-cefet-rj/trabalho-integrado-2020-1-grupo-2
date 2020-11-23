@@ -45,7 +45,7 @@ export const cidadesSlice = createSlice({
 export default cidadesSlice.reducer;
 
 export const {
-    selectAll:  selectAllcidades,
-    selectById: selectcidadesById,
-    selectIds:  selectcidadesIds,
+    selectAll:  selectAllCidades,
+    selectById: selectCidadesById,
+    selectIds:  selectCidadesIds,
 } = cidadesAdapter.getSelectors(state => state.cidades);

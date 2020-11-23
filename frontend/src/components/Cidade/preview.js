@@ -1,20 +1,30 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function CidadePreview({ cidade }) {
+export default function CidadePreview(props) {
+  const { id, name } = props.cidade;
+  const { tempo, index, handleClickExcluirCidade } = props;
+
+  console.log(tempo);
   return (
-    <div className="cidade-preview">
+    <div id={`cityInfo${id}`}>
       <div className="header">
-        <button id={cidade.index}>deletar cidade</button>
-        <h2>{cidade.name}</h2>
+        <button
+          id={`deleteCityButton${index}`}
+          onClick={() => handleClickExcluirCidade(id)}
+        >
+          deletar cidade
+        </button>
+        <Link to={`climacidade/${id}`} >{name}</Link>
       </div>
       <div className="weather">
         <div className="wind-speed">
-          <p>{cidade.windSpeed || 'Sem informações do vento'}</p>
+          <p>{tempo?.wind.speed || 'Sem informações do vento'}</p>
         </div>
         <div className="temperature"></div>
-          <p>{cidade.temperature || 'Sem informações da temperatura'}</p>
+          <p>{tempo?.main.temp || 'Sem informações da temperatura'}</p>
         <div className="humidity">
-          <p>{cidade.humidity || 'Sem informações da humidade'}</p>
+          <p>{tempo?.main.humidity || 'Sem informações da humidade'}</p>
         </div>
       </div>
     </div>

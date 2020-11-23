@@ -1,18 +1,23 @@
 import React, { useEffect } from "react";
 
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteCidadeServer, fetchCidades, selectAllcidades } from '../../components/Cidade/slice';
+import { deleteCidadeServer, fetchCidades, selectAllCidades } from '../../components/Cidade/slice';
 
 import CidadePreview from '../../components/Cidade/preview';
 import Navbar from '../../components/Navbar';
 
-export default function Dashboard() {
+import getWeather from '../../services/weather';
 
-  const cidades = useSelector(selectAllcidades);
+export default function Dashboard() {
+  const tempoCidades = [];
+
+  const cidades = useSelector(selectAllCidades);
   const status = useSelector(state => state.cidades.status);
   const error = useSelector(state => state.cidades.error);
 
   const dispatch = useDispatch();
+
+  let response = '';
 
   function handleClickExcluirCidade(id) {
     dispatch(deleteCidadeServer(id));
@@ -25,10 +30,12 @@ export default function Dashboard() {
         break;
       case 'failed':
         setTimeout(() => dispatch(fetchCidades()), 2000);
+        break;
+      case 'loaded':
+        cidades.map(async (cidade) => tempoCidades.push(await getWeather(cidade.id)));
+        break;
     }
   }, [status, dispatch]);
-
-  let response = '';
 
   switch(status) {
     case 'loadeding':
@@ -38,7 +45,13 @@ export default function Dashboard() {
       response = <div>Error: {error}</div>;
       break;
     default:
-      response = cidades.map(cidade => <CidadePreview cidade={cidade} key={cidade.id} />);
+      response = cidades.map((cidade, index) => <CidadePreview
+        cidade={cidade}
+        tempo={tempoCidades[index]}
+        key={index}
+        index={index}
+        handleClickExcluirCidade={handleClickExcluirCidade}
+      />);
   }
 
   return (
