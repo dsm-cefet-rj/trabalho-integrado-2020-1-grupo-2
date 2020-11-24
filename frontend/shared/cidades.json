@@ -5,6 +5,24 @@
       "latitude": 14,
       "longitude": 16,
       "name": "Rio de Janeiro"
+    },
+    {
+      "id": 3448433,
+      "latitude": 14,
+      "longitude": 16,
+      "name": "São Paulo"
+    },
+    {
+      "id": 3448533,
+      "latitude": 14,
+      "longitude": 16,
+      "name": "Teste 1"
+    },
+    {
+      "id": 3448453,
+      "latitude": 14,
+      "longitude": 16,
+      "name": "Teste 2"
     }
   ]
 }

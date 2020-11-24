@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function CidadePreview(props) {
   const { id, name } = props.cidade;
-  const { tempo, index, handleClickExcluirCidade } = props;
-
-  console.log(tempo);
+  const { weather, index, handleClickExcluirCidade } = props;
+  
   return (
     <div id={`cityInfo${id}`}>
       <div className="header">
@@ -19,12 +18,12 @@ export default function CidadePreview(props) {
       </div>
       <div className="weather">
         <div className="wind-speed">
-          <p>{tempo?.wind.speed || 'Sem informações do vento'}</p>
+          <p>{weather?.wind.speed || 'Sem informações do vento'}</p>
         </div>
         <div className="temperature"></div>
-          <p>{tempo?.main.temp || 'Sem informações da temperatura'}</p>
+          <p>{weather?.main.temp || 'Sem informações da temperatura'}</p>
         <div className="humidity">
-          <p>{tempo?.main.humidity || 'Sem informações da humidade'}</p>
+          <p>{weather?.main.humidity || 'Sem informações da humidade'}</p>
         </div>
       </div>
     </div>

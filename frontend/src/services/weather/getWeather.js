@@ -4,7 +4,7 @@ function makeUrl(key, id) {
     return `https://api.openweathermap.org/data/2.5/forecast?id=${id}&appid=${key}`;
 }
 
-export default async function getWeather(id) {
+async function getWeather(id) {
     try {
         const response = await fetch(makeUrl(API_KEY,id));
         const json = await response.json();
@@ -13,3 +13,10 @@ export default async function getWeather(id) {
         return console.log(error);
     }
 }
+
+function getWeathers(ids) {
+    const response = ids.map(async (id) => await getWeather(id));
+    return response;
+}
+
+export default getWeathers;

@@ -17,10 +17,10 @@ import AdicionarCidade from './pages/adicionarCidade';
 function isAuthenticated() {
   const access_token = sessionStorage.getItem("access_token");
   if (access_token != null) {
-    return true
+    return true;
   } else {
     // return false
-    return true
+    return true;
   }
 }
 

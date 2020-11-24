@@ -45,7 +45,7 @@ export const notasSlice = createSlice({
 export default notasSlice.reducer;
 
 export const {
-    selectAll:  selectAllotas,
+    selectAll:  selectAllNotas,
     selectById: selectNotasById,
     selectIds:  selectNotasIds,
 } = notasAdapter.getSelectors(state => state.notas);
