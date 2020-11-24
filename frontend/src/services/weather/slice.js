@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk, createEntityAdapter} from '@reduxjs/toolkit';
-import getWeathers from './getWeather';
+import { getWeathers } from './weather';
 
 const weathersAdapter = createEntityAdapter();
 

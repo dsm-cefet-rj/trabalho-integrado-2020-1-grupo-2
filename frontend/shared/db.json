@@ -1,0 +1,50 @@
+{
+  "cidades": [
+    {
+      "id": 3451190,
+      "latitude": 14,
+      "longitude": 16,
+      "name": "Rio de Janeiro"
+    },
+    {
+      "id": 3448433,
+      "latitude": 14,
+      "longitude": 16,
+      "name": "São Paulo"
+    },
+    {
+      "id": 3448533,
+      "latitude": 14,
+      "longitude": 16,
+      "name": "Teste 1"
+    },
+    {
+      "id": 3448453,
+      "latitude": 14,
+      "longitude": 16,
+      "name": "Teste 2"
+    },
+    {
+      "id": 5368361,
+      "name": "Los Angeles",
+      "latitude": 34.0522,
+      "longitude": -118.2437
+    },
+    {
+      "id": 3456283,
+      "name": "Niterói",
+      "latitude": -22.8833,
+      "longitude": -43.1036
+    }
+  ],
+  "notas": [
+    {
+      "id": 1,
+      "visits": 1,
+      "name": "pão de açucar",
+      "data": "O pão de açucar é doce",
+      "created": "2020-11-22T06:12:41.743Z",
+      "idCidade": 3451190
+    }
+  ]
+}
