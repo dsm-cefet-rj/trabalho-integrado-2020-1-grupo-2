@@ -27,7 +27,7 @@ export default function AdicionarCidade(props) {
 
   async function handleClickSearch(input) {
     let result = await findCity(input);
-    if(!result) return;
+    if(!result?.list) return;
 
     setCities(result.list.map(city => ({
       'id': city.id,

@@ -35,7 +35,7 @@
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "json-server": "json-server --watch shared/projetos.json --port 3004 -H 192.168.15.4"
+    "json-server": "json-server --watch shared/db.json --port 3004"
   },
   "eslintConfig": {
     "extends": "react-app"

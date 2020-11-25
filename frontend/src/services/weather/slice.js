@@ -11,7 +11,6 @@ const initialState = weathersAdapter.getInitialState({
 export const fetchWeathers = createAsyncThunk('weather/fetchWeathers', async (ids) => {
   const response = await getWeathers(ids);
   const data = await response.json();
-  console.log(data);
   return data;
 });
 

@@ -13,18 +13,6 @@
       "name": "São Paulo"
     },
     {
-      "id": 3448533,
-      "latitude": 14,
-      "longitude": 16,
-      "name": "Teste 1"
-    },
-    {
-      "id": 3448453,
-      "latitude": 14,
-      "longitude": 16,
-      "name": "Teste 2"
-    },
-    {
       "id": 5368361,
       "name": "Los Angeles",
       "latitude": 34.0522,
@@ -35,6 +23,30 @@
       "name": "Niterói",
       "latitude": -22.8833,
       "longitude": -43.1036
+    },
+    {
+      "id": 3451205,
+      "name": "Rio das Ostras",
+      "latitude": -22.5269,
+      "longitude": -41.945
+    },
+    {
+      "id": 3464374,
+      "name": "Duque de Caxias",
+      "latitude": -22.7856,
+      "longitude": -43.3117
+    },
+    {
+      "id": 360630,
+      "name": "Cairo",
+      "latitude": 30.0626,
+      "longitude": 31.2497
+    },
+    {
+      "id": 2643743,
+      "name": "London",
+      "latitude": 51.5085,
+      "longitude": -0.1257
     }
   ],
   "notas": [

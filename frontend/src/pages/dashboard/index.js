@@ -25,6 +25,17 @@ export default function Dashboard() {
     dispatch(deleteCidadeServer(id));
   }
 
+  function renderServerResponse() {
+    return console.log(weathers);
+    serverResponse = cidades.map((cidade, index) => <CidadePreview
+        cidade={cidade}
+        weather={weathers}
+        key={index}
+        index={index}
+        handleClickExcluirCidade={handleClickExcluirCidade}
+      />);
+  }
+
   useEffect(() => {
     switch(statusCidade) {
       case 'not_loaded':
@@ -39,6 +50,8 @@ export default function Dashboard() {
     }
   }, [statusCidade, dispatch]);
 
+  useEffect(() => renderServerResponse(), [cidades]);
+
   switch(statusCidade) {
     case 'loading':
       serverResponse = <div>Carregando cidades...</div>;
@@ -47,15 +60,11 @@ export default function Dashboard() {
       serverResponse = <div>Error: {errorCidade}</div>;
       break;
     case 'loaded':
-      serverResponse = cidades.map((cidade, index) => <CidadePreview
-        cidade={cidade}
-        weather={null}
-        key={index}
-        index={index}
-        handleClickExcluirCidade={handleClickExcluirCidade}
-      />);
+      renderServerResponse();
       break;
   }
+
+  renderServerResponse();
 
   return (
     <div className="dashboard">
