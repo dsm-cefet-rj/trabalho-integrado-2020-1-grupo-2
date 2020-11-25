@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 export default function NotaPreview({ nota }) {
+  const data = new Date(nota.created);
+  
   return (
     <div id={`gotoNote${nota.id}`}>
-      <p>nota imagem</p>
       <div className="preview">
-        <h1>{nota.name}</h1>
-        <p>{`Criada em:${nota.created}`}</p>
+        <Link to={`/notacidade/${nota.idCidade}/${nota.id}`}>{nota.name}</Link >
+        <p>{`Criada em:${data.getDay()}/${data.getMonth()}/${data.getFullYear()}`}</p>
       </div>
     </div>
   );

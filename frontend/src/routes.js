@@ -47,10 +47,10 @@ export default function Routes() {
         <Route path="/login" component={Login} />
         <Route path="/conta" component={Conta} />
         <Route path="/dashboard" component={Dashboard} />
-        <Route path="/climacidade/:id" component={ClimaCidade} />
         <Route path="/adicionarcidade" component={AdicionarCidade} />
-        <PrivateRoute path="/notascidade/:id" component={NotasCidade} />
-        <PrivateRoute path="/notacidade/:id" component={NotaCidade} />
+        <Route path="/climacidade/:idCidade" component={ClimaCidade} />
+        <PrivateRoute path="/notascidade/:idCidade" component={NotasCidade} />
+        <PrivateRoute path="/notacidade/:idCidade/:idNota" component={NotaCidade} />
       </Switch>
     </BrowserRouter>
   );

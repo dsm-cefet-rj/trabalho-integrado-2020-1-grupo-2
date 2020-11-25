@@ -18,9 +18,13 @@ async function getWeather(id) {
   }
 }
 
-export function getWeathers(ids) {
-    const response = ids.map(async (id) => await getWeather(id));
-    return response;
+export async function getWeathers(ids) {
+  const response = [];
+  for(let id of ids) {
+    const data = await getWeather(id);
+    response.push({...data, id});
+  }
+  return response;
 }
 
 export async function findCity(city) {

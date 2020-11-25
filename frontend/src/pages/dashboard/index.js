@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,25 +15,34 @@ export default function Dashboard() {
 
   const weathers = useSelector(selectAllWeathers);
   const statusWeathers = useSelector(state => state.weathers.status);
-  const errorWeathers = useSelector(state => state.weathers.error);
 
   const dispatch = useDispatch();
-
-  let serverResponse = '';
 
   function handleClickExcluirCidade(id) {
     dispatch(deleteCidadeServer(id));
   }
 
-  function renderServerResponse() {
-    return console.log(weathers);
-    serverResponse = cidades.map((cidade, index) => <CidadePreview
-        cidade={cidade}
-        weather={weathers}
-        key={index}
-        index={index}
-        handleClickExcluirCidade={handleClickExcluirCidade}
-      />);
+  function renderResponse() {
+    switch(statusCidade) {
+      case 'loading':
+        return (<p>Carregando cidades...</p>);
+      case 'failed':
+        return (<p>Error: {errorCidade}</p>);
+      case 'loaded':
+        if(cidades.length === 0) return (
+          <p>Sem cidades adicionadas</p>
+        );
+        return (
+          cidades.map((cidade, index) => <CidadePreview
+              cidade={cidade}
+              weather={weathers[index]}
+              key={index}
+              index={index}
+              handleClickExcluirCidade={handleClickExcluirCidade}
+            />
+          )
+        );
+    }
   }
 
   useEffect(() => {
@@ -45,31 +54,18 @@ export default function Dashboard() {
         setTimeout(() => dispatch(fetchCidades()), 2000);
         break;
       case 'loaded':
-        dispatch(fetchWeathers(cidades.map(cidade => cidade.id)));
+        if(statusWeathers === 'not_loaded') {
+          dispatch(fetchWeathers(cidades.map(cidade => cidade.id)));
+        }
+        console.log({weathers, cidades, statusWeathers});
         break;
     }
-  }, [statusCidade, dispatch]);
-
-  useEffect(() => renderServerResponse(), [cidades]);
-
-  switch(statusCidade) {
-    case 'loading':
-      serverResponse = <div>Carregando cidades...</div>;
-      break;
-    case 'failed':
-      serverResponse = <div>Error: {errorCidade}</div>;
-      break;
-    case 'loaded':
-      renderServerResponse();
-      break;
-  }
-
-  renderServerResponse();
+  }, [statusWeathers, statusCidade, dispatch]);
 
   return (
     <div className="dashboard">
       <Navbar title='dashboard' />
-      {serverResponse[0] ? serverResponse : 'Sem cidades adicionadas'}
+      {renderResponse()}
       <Link to='/adicionarcidade'>Adicionar Cidade</Link>
       <button type='button'>Deletar Todas as Cidades</button>
       <Link to='/conta'>Conta</Link>

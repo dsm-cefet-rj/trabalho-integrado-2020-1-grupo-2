@@ -10,8 +10,7 @@ const initialState = weathersAdapter.getInitialState({
 
 export const fetchWeathers = createAsyncThunk('weather/fetchWeathers', async (ids) => {
   const response = await getWeathers(ids);
-  const data = await response.json();
-  return data;
+  return response;
 });
 
 export const weathersSlice = createSlice({
