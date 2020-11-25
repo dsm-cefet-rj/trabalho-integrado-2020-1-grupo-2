@@ -1,12 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Navbar from '../../components/Navbar';
-
 export default function Home() {
   return (
     <div className="home">
-      <Navbar title="Home" />
       <h1>Protótipo - v1</h1>
       <p>Lista de rotas</p>
       <ul>

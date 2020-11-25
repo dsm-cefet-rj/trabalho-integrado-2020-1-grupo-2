@@ -11,6 +11,7 @@ import ClimaCidade from './pages/climaCidade';
 import NotaCidade from './pages/notaCidade';
 import NotasCidade from './pages/notasCidade';
 import AdicionarCidade from './pages/adicionarCidade';
+import CriarNotaCidade from './pages/criarNotaCidade';
 
 // Faz nada por enquanto
 
@@ -50,7 +51,8 @@ export default function Routes() {
         <Route path="/adicionarcidade" component={AdicionarCidade} />
         <Route path="/climacidade/:idCidade" component={ClimaCidade} />
         <PrivateRoute path="/notascidade/:idCidade" component={NotasCidade} />
-        <PrivateRoute path="/notacidade/:idCidade/:idNota" component={NotaCidade} />
+        <PrivateRoute path="/notacidade/:idNota" exact component={NotaCidade} />
+        <PrivateRoute path="/notacidade/criar/:idCidade" component={CriarNotaCidade} />
       </Switch>
     </BrowserRouter>
   );

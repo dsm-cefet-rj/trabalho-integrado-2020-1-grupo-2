@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +12,7 @@ export default function NotasCidade() {
   const statusNotas = useSelector(state => state.notas.status);
   const errorNotas = useSelector(state => state.notas.error);
 
-  const { cityId } = useParams();
+  const { idCidade } = useParams();
   const dispatch = useDispatch();
 
   function handleClickExcluirNota(notaId) {
@@ -25,10 +25,9 @@ export default function NotasCidade() {
         return <p>Carregando notas...</p>;
       case 'failed':
         return <p>Error: {errorNotas}</p>;
-      case 'loaded':
-        let notasCidade = notas.filter(nota => nota.idCidade === cityId);
-        if(notasCidade === 0) return <p>Sem notas adicionadas!</p>;
-        console.log(notas);
+      default:
+        let notasCidade = notas.filter(nota => nota.idCidade === parseInt(idCidade));
+        if(notasCidade.length === 0) return <p>Sem notas adicionadas!</p>;
         return (
           notas.map((nota, index) =>
             <NotaPreview
@@ -51,11 +50,17 @@ export default function NotasCidade() {
         setTimeout(() => dispatch(fetchNotas()), 2000);
         break;
     }
-  }, [statusNotas, dispatch]);
+  }, [notas, statusNotas, dispatch]);
 
   return (
     <div className="notas">
       <Navbar title='Notas' />
+      <Link
+        id='createCityNoteButton'
+        to={`/notacidade/criar/${idCidade}`}
+      >
+        Criar nota
+      </Link>
       {renderServerResponse()}
     </div>
   );

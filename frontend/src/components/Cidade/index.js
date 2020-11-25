@@ -5,8 +5,6 @@ import Weather from '../Weather';
 
 export default function Cidade(props) {
   const { weather } = props;
-  
-  if(!props.cidade) return <p>Fazer fetch em cidades!</p>
 
   const { id } = props.cidade;
 
@@ -20,9 +18,6 @@ export default function Cidade(props) {
   return (
     <div className="cidade">
       {renderWeatherInfos()}
-      <div className="extraInfos">
-        <p>Informações adicionais sobre o tempo</p>
-      </div>
       <Link id="cityNotesButton" to={`/notascidade/${id}`}>Notas</Link>
     </div>
   );

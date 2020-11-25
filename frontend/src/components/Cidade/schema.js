@@ -1,7 +1,7 @@
-import yup, { setLocale } from 'yup';
+import * as yup from 'yup';
 import { ptForm } from 'yup-locale-pt';
 
-setLocale(ptForm);
+yup.setLocale(ptForm);
 
 const SchemaCidade = yup.object().shape({
   id:         yup.number(),

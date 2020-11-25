@@ -13,50 +13,34 @@
       "name": "São Paulo"
     },
     {
-      "id": 5368361,
-      "name": "Los Angeles",
-      "latitude": 34.0522,
-      "longitude": -118.2437
-    },
-    {
       "id": 3456283,
       "name": "Niterói",
       "latitude": -22.8833,
       "longitude": -43.1036
     },
     {
-      "id": 3451205,
-      "name": "Rio das Ostras",
-      "latitude": -22.5269,
-      "longitude": -41.945
-    },
-    {
       "id": 3464374,
       "name": "Duque de Caxias",
       "latitude": -22.7856,
       "longitude": -43.3117
-    },
-    {
-      "id": 360630,
-      "name": "Cairo",
-      "latitude": 30.0626,
-      "longitude": 31.2497
-    },
-    {
-      "id": 2643743,
-      "name": "London",
-      "latitude": 51.5085,
-      "longitude": -0.1257
     }
   ],
   "notas": [
     {
       "id": 1,
-      "visits": 1,
-      "name": "pão de açucar",
-      "data": "O pão de açucar é doce",
-      "created": "2020-11-22T06:12:41.743Z",
+      "created": 1606303977314,
+      "name": "Pão de Açucar",
+      "data": "pão de açucar é nós",
+      "visits": "6",
       "idCidade": 3451190
+    },
+    {
+      "name": "teste",
+      "data": "testeteste",
+      "visits": "1",
+      "idCidade": 3451190,
+      "created": 1606309442879,
+      "id": 2
     }
   ]
 }

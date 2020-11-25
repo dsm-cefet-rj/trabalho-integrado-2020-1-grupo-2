@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -22,6 +22,11 @@ export default function Dashboard() {
     dispatch(deleteCidadeServer(id));
   }
 
+  function handleClickExcluirTodasCidades() {
+    let response = window.confirm('Excluir todas as cidades?');
+    if(response) for(let cidade of cidades) handleClickExcluirCidade(cidade.id);
+  }
+
   function renderResponse() {
     switch(statusCidade) {
       case 'loading':
@@ -32,17 +37,18 @@ export default function Dashboard() {
         if(cidades.length === 0) return (
           <p>Sem cidades adicionadas</p>
         );
-        return (
-          cidades.map((cidade, index) => <CidadePreview
-              cidade={cidade}
-              weather={weathers[index]}
-              key={index}
-              index={index}
-              handleClickExcluirCidade={handleClickExcluirCidade}
-            />
-          )
-        );
+        break;
     }
+    return (
+      cidades.map((cidade, index) => <CidadePreview
+          cidade={cidade}
+          weather={weathers[index]}
+          key={index}
+          index={index}
+          handleClickExcluirCidade={handleClickExcluirCidade}
+        />
+      )
+    );
   }
 
   useEffect(() => {
@@ -57,7 +63,6 @@ export default function Dashboard() {
         if(statusWeathers === 'not_loaded') {
           dispatch(fetchWeathers(cidades.map(cidade => cidade.id)));
         }
-        console.log({weathers, cidades, statusWeathers});
         break;
     }
   }, [statusWeathers, statusCidade, dispatch]);
@@ -67,7 +72,7 @@ export default function Dashboard() {
       <Navbar title='dashboard' />
       {renderResponse()}
       <Link to='/adicionarcidade'>Adicionar Cidade</Link>
-      <button type='button'>Deletar Todas as Cidades</button>
+      <button type='button' onClick={handleClickExcluirTodasCidades}>Deletar Todas as Cidades</button>
       <Link to='/conta'>Conta</Link>
     </div>
   );

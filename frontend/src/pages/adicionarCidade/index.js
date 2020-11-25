@@ -17,6 +17,7 @@ export default function AdicionarCidade(props) {
   const [renderCities, setRenderCities] = useState([]);
 
   function handleInputChange(event) {
+    if(event.target.value.length > 86) return window.alert('Limite de caracteres atingindo!');
     setInput(event.target.value);
   }
 
