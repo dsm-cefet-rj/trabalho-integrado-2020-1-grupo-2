@@ -11,3 +11,18 @@ Organizaremos os arquivos de código-fonte do projeto na seguinte estrutura.
 A gestão do andamento dos projetos será feita com pelos projetos no github na aba projetos.
 
 A documentação do projeto será feita em formato wiki na aba wiki do projeto (utilizem a formatação markdown para o wiki, que é a default).
+
+
+#Testes de Software
+
+1- Após clonar repositorio, entre na pasta frontend e instale os módulos com:
+yarn
+
+2-Rode o banco com:
+npm run json-server
+
+3- Em outro terminal rode:
+yarn test
+
+4- Num terceiro terminal rode o plugin a ser ativado com o cypress, que disponibilizará além da interface, uma pasta com os testes de cobertura:
+npm run cypress:open
