@@ -21,7 +21,7 @@ export default function NotaCidade() {
 
   function handleExcluirNota(id) {
     dispatch(deleteNotaServer(id));
-    history.push(`/notascidades/${notaFound.idCidade}`);
+    history.goBack();
   }
 
   function handleAtualizarNota(nota) {
