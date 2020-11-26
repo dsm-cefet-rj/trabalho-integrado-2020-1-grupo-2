@@ -6,6 +6,7 @@ Funcionalidade: Login
 			E temos um usuário cadastrado
 			|	id	|	nome			|	senha		|
 			|	1	|	Roberto			|	abcdxyz234	|
+			Então ele pode logar
     
 	Cenário: O usuário insere login e senha válidos, corretos e correspondentes
 		Dado que o usuário inseriu nome e sua senha cadastrados e correspondentes de uma mesma conta
@@ -28,6 +29,7 @@ Funcionalidade: Login
 		Então será notificado que a senha está incorreta
 
 	Cenário: Cadastrar nova conta
+		Dado que o usuario quer cadastrar nova conta
 		Quando o usuário clica no botão Cadastrar
 		Então a tela CriarNovaConta será carregada
 		
