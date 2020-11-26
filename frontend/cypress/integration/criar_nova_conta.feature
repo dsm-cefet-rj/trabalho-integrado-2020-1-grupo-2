@@ -1,3 +1,4 @@
+#language: pt
 Funcionalidade: Criar Nova Conta
 
     Visitante acessa a tela Home e clica em Nova Conta para prosseguir e criar conta

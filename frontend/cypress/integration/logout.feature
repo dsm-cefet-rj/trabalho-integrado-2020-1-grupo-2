@@ -1,3 +1,4 @@
+#language: pt
 Funcionalidade: Logout
 
   Contexto:

@@ -1,4 +1,4 @@
-# language: pt
+#language: pt
 Funcionalidade: Adicionar cidade
 
 	Cenário: Buscar uma cidade válida e existente no sistema

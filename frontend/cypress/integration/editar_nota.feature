@@ -1,3 +1,4 @@
+#language: pt
 Funcionalidade: Editar Notas
 	Um usuário é capaz de criar, editar e excluir notas sobre uma cidade salva 
 
