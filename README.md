@@ -28,7 +28,7 @@ npm run json-server
 
 3- Em outro terminal rode:
 ```sh
-npm yarn test
+yarn test
 ```
 
 4- Num terceiro terminal rode o plugin a ser ativado com o cypress, que disponibilizará além da interface, uma pasta com os testes de cobertura:
