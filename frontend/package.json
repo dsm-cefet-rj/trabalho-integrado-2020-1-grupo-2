@@ -58,7 +58,8 @@
     "@cypress/code-coverage": "^3.8.1",
     "cucumber": "^6.0.5",
     "cypress": "^5.6.0",
-    "cypress-cucumber-preprocessor": "^2.5.5"
+    "cypress-cucumber-preprocessor": "^2.5.5",
+    "cypress-xpath": "^1.6.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true
