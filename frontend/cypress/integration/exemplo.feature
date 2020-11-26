@@ -1,4 +1,4 @@
-# language: pt
+#language: pt
 Funcionalidade: Explicar
 
     Exemplo do professor, usar como referencia

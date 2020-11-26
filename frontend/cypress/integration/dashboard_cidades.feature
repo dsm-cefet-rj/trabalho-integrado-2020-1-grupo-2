@@ -1,4 +1,4 @@
-# language: pt
+#language: pt
 Funcionalidade: Dashboard
 
 	Apresenta uma lista de cidades selecionadas e/ou salvas pelo usuário, permitindoq ue ele edite seus detalhes.

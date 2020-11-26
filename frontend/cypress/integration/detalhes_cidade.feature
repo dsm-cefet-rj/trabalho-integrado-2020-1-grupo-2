@@ -1,3 +1,4 @@
+#language: pt
 Funcionalidade: Detalhes de uma Cidade
 
 	Cenário: Exibir Detalhes de uma cidade
