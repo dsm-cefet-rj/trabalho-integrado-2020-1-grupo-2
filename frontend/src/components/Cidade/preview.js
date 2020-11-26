@@ -8,7 +8,7 @@ export default function CidadePreview(props) {
   const { weather, index, handleClickExcluirCidade } = props;
   
   return (
-    <div id={`cityInfo${id}`}>
+    <div id={`cityInfo${index}`}>
       <div className="header">
         <button
           id={`deleteCityButton${index}`}

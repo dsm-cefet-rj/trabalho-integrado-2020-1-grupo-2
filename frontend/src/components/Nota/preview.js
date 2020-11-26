@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function NotaPreview({ nota }) {
+export default function NotaPreview({ nota, index }) {
 
   function dataAtualFormatada(date){
     var data = new Date(date),
@@ -16,7 +16,7 @@ export default function NotaPreview({ nota }) {
   return (
     <div id={`gotoNote${nota.id}`}>
       <div className="preview">
-        <Link to={`/notacidade/${nota.id}`}>{nota.name}</Link >
+        <Link id={`goToNote${index}`} to={`/notacidade/${nota.id}`}>{nota.name}</Link >
         <p>{`Criada em: ${dataAtualFormatada(nota.created)}`}</p>
       </div>
     </div>

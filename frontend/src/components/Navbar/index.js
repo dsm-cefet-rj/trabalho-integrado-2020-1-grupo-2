@@ -6,7 +6,7 @@ export default function Navbar(props) {
 
   return (
     <div className="navbar">
-      <button type="button" onClick={goBack}>
+      <button id='goBackButton' type="button" onClick={goBack}>
         Voltar
       </button>
       <h1>{props.title}</h1>

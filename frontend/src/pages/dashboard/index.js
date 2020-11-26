@@ -71,9 +71,9 @@ export default function Dashboard() {
     <div className="dashboard">
       <Navbar title='dashboard' />
       {renderResponse()}
-      <Link to='/adicionarcidade'>Adicionar Cidade</Link>
-      <button type='button' onClick={handleClickExcluirTodasCidades}>Deletar Todas as Cidades</button>
-      <Link to='/conta'>Conta</Link>
+      <Link id='goToaddCityButton' to='/adicionarcidade'>Adicionar Cidade</Link>
+      <button id='deleteAllCitiesButton' type='button' onClick={handleClickExcluirTodasCidades}>Deletar Todas as Cidades</button>
+      <Link id='goToAccPageButton' to='/conta'>Conta</Link>
     </div>
   );
 }

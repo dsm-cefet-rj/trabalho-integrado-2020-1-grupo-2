@@ -61,6 +61,7 @@ export default function AdicionarCidade(props) {
           Pesquisar
         </button>
         <input
+          id='addCityInput'
           type='text'
           placeholder='pesquise uma cidade'
           onChange={handleInputChange}
