@@ -5,6 +5,8 @@ Funcionalidade: Criar Nova Conta
     
     Contexto:
         Dado que o usuario está na Tela Home
+        Quando clica em Criar Conta
+        Então é redirecionado para pagina Criar Conta
 
     Cenário: Usuário tenta criar conta com Nome, E-mail, Senha e Confirmar Senha válidos e E-mail não cadastrado no sistema
         Dado que o usuário inseriu todos os dados corretamente
@@ -19,5 +21,5 @@ Funcionalidade: Criar Nova Conta
 
     Cenário: Usuário tenta criar conta com E-mail já cadastrado
         Dado que o usuário inseriu E-mail pertencentes a um usuário já cadastrado no sistema
-        Quando ele clica em Entrar
+        Quando ele clica em Criar Conta
         Então recebe mensagem de Usuário já cadastrado
