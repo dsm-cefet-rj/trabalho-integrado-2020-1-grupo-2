@@ -19,10 +19,9 @@ Funcionalidade: Gerenciar Notas
 		E os dados da nota selecionada são exibidos na tela NotaCidade
 		
 	Cenário: Usuário logado tenta criar nova nota
-		Dado que o usuário está na tela NotasCidade
+		Dado que a tela NotasCidade é exibida
 		Quando clica no botão Criar Nova Nota
 		Então carrega a tela NotaCidade 
-		E uma nota é criada
 
 	# Visto que convidados não podem criar notas, não faz sentido
 	# um usuário desse tipo ter acesso a essa tela e esse tratamento existir
