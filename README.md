@@ -18,7 +18,7 @@ A documentação do projeto será feita em formato wiki na aba wiki do projeto (
 1- Após clonar repositorio, entre na pasta frontend e instale os módulos com:
 
 ```sh
-yarn
+yarn install
 ```
 
 2-Rode o banco com:
@@ -35,3 +35,7 @@ yarn test
 ```sh
 npm run cypress:open
 ```
+5- A medição da cobertura após rodar o ultimo script na pasta frontend/coverage/lcov-report/index.html
+
+6-Evidências como vídeos e screenshots também são gerados na pasta frontend/cypress após usar o comando:
+npm run cypress:run
