@@ -27,5 +27,5 @@ Funcionalidade: Adicionar cidade
 		Dado que o usuário está na tela AdicionarCidade
 		E realizou uma busca que retornou um ou mais resultados válidos,
 		Quando o usuário clica em um dos resultados,
-		Então a cidade daquele resultado é adicionada ao dashboard
-		E a tela Dashboard é exibida
+		Então a tela Dashboard é exibida
+		E a cidade daquele resultado é adicionada ao dashboard
