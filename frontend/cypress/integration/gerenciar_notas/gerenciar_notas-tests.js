@@ -25,13 +25,11 @@ And('há pelo menos uma nota cadastrada exibida na listagem de notas', () => {
 });
 
 When('o usuário seleciona uma nota', () => {
-	cy.xpath('//*[@id="goToNote0"]');
-
 	cy.xpath('//*[@id="goToNote0"]')
-	.then(($btn) => {
+	.then(($note_text) => {
 		// store the button's text
 		//console.log($btn.text());
-		current_note_name = $btn.text();
+		current_note_name = $note_text.text();
 	});
 
 
@@ -67,6 +65,7 @@ And('uma nota é criada', () => {
 });
 
 
+//NÃO IMPLEMENTADO
 /*Usuário convidado acessa página de Notas*/
 Given('que o usuário está usando uma conta convidada, ou seja, não está logado', ()=> {
 
