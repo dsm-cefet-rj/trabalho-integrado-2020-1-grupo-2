@@ -38,4 +38,6 @@ npm run cypress:open
 5- A medição da cobertura após rodar o ultimo script na pasta frontend/coverage/lcov-report/index.html
 
 6-Evidências como vídeos e screenshots também são gerados na pasta frontend/cypress após usar o comando:
+```sh
 npm run cypress:run
+```
