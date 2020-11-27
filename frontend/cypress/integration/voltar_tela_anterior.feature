@@ -2,7 +2,7 @@
 Funcionalidade: Retorna a tela anterior
 
   Contexto:
-    Dado que o usuário está visualizando das telas
+    Dado que o usuário está visualizando um das telas
       |tela| nome                   |
       |2   | CriarNovaConta         |
       |3   | CriarNovaContaSucesso  |
