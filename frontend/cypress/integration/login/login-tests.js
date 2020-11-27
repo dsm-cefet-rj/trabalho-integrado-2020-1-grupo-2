@@ -39,7 +39,13 @@ And('temos um usuário cadastrado', async function (usuario) {
 	    cy.visit('/dashboard')
 	)
 
-	Given('o usuário inseriu um nome não cadastrado', () => cy.visit('/login'));
+	Given('o usuário inseriu um nome não cadastrado', () => {
+
+		cy.visit('/login');
+		
+
+	}
+		);
 	 
 
 	When('ele aperta o botão Entrar', () => cy.get('#loginButton').click());

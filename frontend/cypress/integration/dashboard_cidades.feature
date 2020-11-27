@@ -62,7 +62,7 @@ Funcionalidade: Dashboard
 	Cenário: Salvar cidades numa conta convidada
 		Dado que o usuário está usando uma conta convidada, ou seja, não está logado
 		E que é exibida a tela de Dashboard
-		E há pelo menos uma cidade sexibida na tela de Dashboard
+		E há pelo menos uma cidade exibida na tela de Dashboard
 		Quando o usuário clica no botão "Salvar cidades"
 		Então um alerta de que ele precisa estar de uma conta será exibido
 
