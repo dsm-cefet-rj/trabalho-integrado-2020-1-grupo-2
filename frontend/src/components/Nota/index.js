@@ -14,6 +14,7 @@ export default function Nota(props) {
   }, []);
 
   function handleDataChange(event) {
+    if(event.target.value.length > 2048) return window.alert('Limite de caracteres atingindo!');
     setData(event.target.value);
   }
 
