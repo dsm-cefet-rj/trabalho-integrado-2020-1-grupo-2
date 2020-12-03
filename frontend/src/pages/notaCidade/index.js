@@ -20,6 +20,10 @@ export default function NotaCidade() {
   };
 
   function handleExcluirNota(id) {
+    let response = window.confirm('Deletar nota?');
+    
+    if(!response) return;
+
     dispatch(deleteNotaServer(id));
     history.goBack();
   }
