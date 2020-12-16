@@ -1,0 +1,13 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Light Weather Backend",
+  "main": "index.js",
+  "author": "cassio fernando",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8"
+  }
+}
