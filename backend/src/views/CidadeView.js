@@ -1,0 +1,1 @@
+const Cidade = require('../controllers/CidadeController');

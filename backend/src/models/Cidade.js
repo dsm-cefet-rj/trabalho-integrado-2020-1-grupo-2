@@ -19,7 +19,7 @@ const CidadeSchema = mongoose.Schema({
   },
   notas: [{
     type:     mongoose.Types.ObjectId,
-    required: true,
+    ref:     'Cidades',
   }],
 });
 
