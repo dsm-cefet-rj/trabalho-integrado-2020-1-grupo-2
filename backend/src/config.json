@@ -1,4 +1,4 @@
 {
-  "mongoURL": "mongodb+srv://gyaryu:gyaryu@omnistack10-v70kz.mongodb.net/test?authSource=admin&replicaSet=omnistack10-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true",
+  "mongoURL": "mongodb+srv://gyaryu:gyaryu@omnistack10-v70kz.mongodb.net/10?retryWrites=true&w=majority",
   "port": 3333
 }
