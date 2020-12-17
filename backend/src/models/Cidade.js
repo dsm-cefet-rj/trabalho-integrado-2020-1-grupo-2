@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const CidadeSchema = mongoose.Schema({
-  _id: {
-    type:     mongoose.Types.ObjectId,
+  weatherID: {
+    type:     Number,
     required: true,
   },
   name: {
@@ -19,7 +19,7 @@ const CidadeSchema = mongoose.Schema({
   },
   notas: [{
     type:     mongoose.Types.ObjectId,
-    ref:     'Cidades',
+    ref:     'Nota',
   }],
 });
 

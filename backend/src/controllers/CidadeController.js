@@ -23,8 +23,8 @@ module.exports = {
   },
   async store(request, response, next) {
     try {
-      const cidade = await Cidade.create(response.body);
-
+      const cidade = await Cidade.create(request.body);
+      
       response.json(CidadeView.render(cidade));
     } catch(error) {
       next(error);
