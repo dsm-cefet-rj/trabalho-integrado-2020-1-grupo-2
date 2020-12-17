@@ -14,8 +14,8 @@ const NotaSchema = mongoose.Schema({
     required: true,
   },
   idCidade: {
-    type:    mongoose.Types.ObjectId,
-    require: true,
+    type:     mongoose.Types.ObjectId,
+    require:  true,
   },
   created: {
     type:     Date,
