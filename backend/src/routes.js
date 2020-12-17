@@ -2,6 +2,7 @@ const { Router } = require('express');
 
 const CidadeController = require('./controllers/CidadeController');
 const NotaController   = require('./controllers/NotaController');
+const home             = require('./middlewares/home');
 
 const routes = Router();
 
@@ -16,5 +17,7 @@ routes.get   ('/notas/:id', NotaController.show    );
 routes.post  ('/notas',     NotaController.store   );
 routes.put   ('/notas/:id', NotaController.update  );
 routes.delete('/notas/:id', NotaController.destroy );
+
+routes.get('/', home);
 
 module.exports = routes;
