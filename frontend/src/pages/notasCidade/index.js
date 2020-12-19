@@ -42,7 +42,7 @@ export default function NotasCidade() {
         let notasCidade = notas.filter(nota => nota.idCidade === idCidade);
         if(notasCidade.length === 0) return <p>Sem notas adicionadas!</p>;
         return (
-          notas.filter(nota => nota.id).map((nota, index) =>
+          notasCidade.filter(nota => nota.id).map((nota, index) =>
             <NotaPreview
               nota={nota}
               key={index}
