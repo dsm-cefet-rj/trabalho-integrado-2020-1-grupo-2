@@ -1,4 +1,5 @@
 const Nota     = require('../models/Nota');
+const Cidade   = require('../models/Cidade');
 const NotaView = require('../views/NotaView');
 
 module.exports = {
@@ -23,7 +24,15 @@ module.exports = {
   },
   async store(request, response, next) {
     try {
-      const nota = await Nota.create(request.body);
+      const nota   = await Nota.create({
+        ...request.body,
+        created: Date.now(),
+      });
+      const cidade = await Cidade.findById(nota.idCidade);
+
+      await cidade?.updateOne({
+        notas: [...cidade.notas, nota._id],
+      });
 
       response.json(NotaView.render(nota));
     } catch(error) {
@@ -33,7 +42,9 @@ module.exports = {
   async update(request, response, next) {
     try {
       const { id } = request.params;
-      const nota   = await Nota.findByIdAndUpdate(id, request.body, {new: true});
+      const nota   = await Nota.findById();
+
+      nota?.updateOne(id, request.body, {new: true});
 
       response.json(NotaView.render(nota));
     } catch(error) {
@@ -43,7 +54,9 @@ module.exports = {
   async destroy(request, response, next) {
     try {
       const { id } = request.params;
-      const nota   = await Nota.findByIdAndRemove(id);
+      const nota   = await Nota.findById(id);
+
+      nota?.deleteOne();
 
       response.json(NotaView.render(nota));
     } catch(error) {

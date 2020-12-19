@@ -33,7 +33,11 @@ module.exports = {
   async update(request, response, next) {
     try {
       const { id } = request.params;
-      const cidade = await Cidade.findByIdAndUpdate(id, request.body, {new: true});
+      const cidade = await Cidade.findByIdAndUpdate(
+        id,
+        request.body,
+        {new: true}
+      );
 
       response.json(CidadeView.render(cidade));
     } catch(error) {
