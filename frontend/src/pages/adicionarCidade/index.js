@@ -8,7 +8,11 @@ import { findCity } from '../../services/weather/weather';
 
 import Navbar from '../../components/Navbar';
 
-export default function AdicionarCidade(props) {
+/**
+ * Função componente que renderiza a tela de adicionar cidades.
+ * @function AdicionarCidade
+ */
+export default function AdicionarCidade() {
 
   const history = useHistory();
   const dispacth = useDispatch();
@@ -16,17 +20,34 @@ export default function AdicionarCidade(props) {
   const [cities, setCities] = useState([]);
   const [renderCities, setRenderCities] = useState([]);
 
+  /**
+ * Acionada quando usuário digita no input.
+ * Utilizadar na criação e validação de cidades.
+ * @function handleInputChange
+ * @param {Event} event - Evento acionado pelo usuário.
+ */
   function handleInputChange(event) {
     if(/[^a-zA-Z\s\-]/.test(event.target.value)) return window.alert('Caractere inválido!');
     if(event.target.value.length > 86) return window.alert('Limite de caracteres atingindo!');
     setInput(event.target.value);
   }
 
+ /**
+ * Acionanda quando o usuário clica no butão da cidade.
+ * Adiciona a cidade e leva o usuário para a tela de dashboard.
+ * @function handleClickResult
+ * @param {City} city - Cidade a cer adicionada.
+ */
   function handleClickResult(city) {
     dispacth(addCidadeServer(city));
     history.push('/dashboard');
   }
 
+  /**
+ * Acionada quando o usuário clica em buscar cidade.
+ * @function handleClickSearch
+ * @param {string} input - Cidade a ser buscada
+ */
   async function handleClickSearch(input) {
     let result = await findCity(input);
     if(!result?.list) return;

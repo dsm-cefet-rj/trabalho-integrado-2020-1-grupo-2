@@ -7,6 +7,10 @@ import { selectNotasById, deleteNotaServer, updateNotaServer } from "../../compo
 import Navbar from '../../components/Navbar';
 import Nota from '../../components/Nota';
 
+/**
+ * Função componente que renderiza uma nota de uma cidade.
+ * @function NotaCidade
+ */
 export default function NotaCidade() {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -19,6 +23,11 @@ export default function NotaCidade() {
     return <div>Redirecionando para home</div>
   };
 
+  /**
+ * Acionada quando o usuário clica em excluir nota.
+ * @function handleExcluirNota
+ * @param {string} id - ID da nota a ser excluída
+ */
   function handleExcluirNota(id) {
     let response = window.confirm('Deletar nota?');
     
@@ -28,6 +37,11 @@ export default function NotaCidade() {
     history.goBack();
   }
 
+  /**
+ * Acionada quando o usuário clica em salvar.
+ * @function handleAtualizarNota
+ * @param {Nota} nota - nota a ser atualizada
+ */
   function handleAtualizarNota(nota) {
     dispatch(updateNotaServer(nota));
   }

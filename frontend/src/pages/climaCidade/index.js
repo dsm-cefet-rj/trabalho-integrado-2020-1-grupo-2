@@ -8,6 +8,10 @@ import { selectWeathersById } from '../../services/weather/slice';
 import Navbar  from '../../components/Navbar';
 import Cidade  from '../../components/Cidade';
 
+/**
+ * Função componente que renderiza a tela dos climas de uma cidade.
+ * @function ClimaCidade
+ */
 export default function ClimaCidade() {
   const history = useHistory();
   const { idCidade }  = useParams();

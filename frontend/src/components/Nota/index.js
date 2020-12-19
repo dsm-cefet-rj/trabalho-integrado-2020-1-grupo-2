@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
+/**
+ * Função componente que renderiza uma nota
+ * @function Nota
+ */
 export default function Nota(props) {
   const { nota } = props;
   const {handleExcluirNota, handleAtualizarNota} = props;
@@ -13,19 +17,37 @@ export default function Nota(props) {
     if(nota.visits) setVisits(nota.visits);
   }, []);
 
+  /**
+ * Acionada quando o usuário digita no campo de dados da nota
+ * @function handleDataChange
+ * @param {Event} event - Evento acionado pelo usuário
+ */
   function handleDataChange(event) {
     if(event.target.value.length > 2048) return window.alert('Limite de caracteres atingindo!');
     setData(event.target.value);
   }
 
+  /**
+ * Acionada quando o usuário digita no campo de visitas da nota
+ * @function handleVisitsChange
+ * @param {Event} event - Evento acionado pelo usuário
+ */
   function handleVisitsChange(event) {
     setVisits(event.target.value);
   }
 
+  /**
+ * Acionada quando o usuário clica no botão de editar/salvar
+ * @function handleClickEditButton
+ */
   function handleClickEditButton() {
     setEditMode(!editMode);
   }
 
+  /**
+ * Acionada quando o usuário clica no botão de salvar
+ * @function handleClickSaveButton
+ */
   function handleClickSaveButton() {
     handleAtualizarNota({
       id: nota.id,

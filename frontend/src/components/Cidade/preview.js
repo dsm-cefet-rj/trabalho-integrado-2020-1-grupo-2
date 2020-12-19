@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 import Weather from '../Weather';
 
+/**
+ * Renderiza o preview de uma cidade
+ * @function CidadePreview
+ */
 export default function CidadePreview(props) {
   const { id, name } = props.cidade;
   const { weather, index, handleClickExcluirCidade } = props;

@@ -7,6 +7,10 @@ import { selectAllNotas, fetchNotas, deleteNotaServer } from '../../components/N
 import NotaPreview from '../../components/Nota/preview';
 import Navbar from '../../components/Navbar';
 
+/**
+ * Função componente que renderiza todas as notas de uma cidade.
+ * @function NotasCidade
+ */
 export default function NotasCidade() {
   let   notas = useSelector(selectAllNotas);
   const statusNotas = useSelector(state => state.notas.status);
@@ -15,10 +19,19 @@ export default function NotasCidade() {
   const { idCidade } = useParams();
   const dispatch = useDispatch();
 
+  /**
+ * Acionada quando o usuário clica em excluir nota.
+ * @function handleClickExcluirNota
+ * @param {string} notaId - Cidade a ser buscada
+ */
   function handleClickExcluirNota(notaId) {
     dispatch(deleteNotaServer(notaId));
   }
 
+  /**
+ * Função que renderiza a resposta do servidor backend.
+ * @function renderServerResponse
+ */
   function renderServerResponse() {
     switch(statusNotas) {
       case 'loading':
@@ -49,6 +62,7 @@ export default function NotasCidade() {
       case 'failed':
         setTimeout(() => dispatch(fetchNotas()), 2000);
         break;
+      default:
     }
   }, [notas, statusNotas, dispatch]);
 

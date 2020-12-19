@@ -8,6 +8,10 @@ import { selectAllWeathers, fetchWeathers } from '../../services/weather/slice';
 import CidadePreview from '../../components/Cidade/preview';
 import Navbar from '../../components/Navbar';
 
+/**
+ * Função componente que renderiza a tela de Dashboard
+ * @function Dashboard
+ */
 export default function Dashboard() {
   const cidades = useSelector(selectAllCidades);
   const statusCidade = useSelector(state => state.cidades.status);
@@ -18,15 +22,29 @@ export default function Dashboard() {
 
   const dispatch = useDispatch();
 
+  /**
+ * Acionada quando o usuário clica em excluir cidade.
+ * @function handleClickExcluirCidade
+ * @param {string} id - id da cidade a ser deletada
+ */
   function handleClickExcluirCidade(id) {
     dispatch(deleteCidadeServer(id));
   }
 
+  /**
+ * Acionada quando o usuário clica em excluir todas as cidades.
+ * @function handleClickExcluirTodasCidades
+ */
   function handleClickExcluirTodasCidades() {
     let response = window.confirm('Excluir todas as cidades?');
     if(response) for(let cidade of cidades) handleClickExcluirCidade(cidade.id);
   }
 
+  /**
+ * Função auxiliar que renderiza a resposta do servidor backend.
+ * A renderização muda de acordo com o estado do redux.
+ * @function renderResponse
+ */
   function renderResponse() {
     switch(statusCidade) {
       case 'loading':
@@ -38,6 +56,7 @@ export default function Dashboard() {
           <p>Sem cidades adicionadas</p>
         );
         break;
+      default:
     }
     return (
       cidades.map((cidade, index) => <CidadePreview
@@ -64,6 +83,7 @@ export default function Dashboard() {
           dispatch(fetchWeathers(cidades.map(cidade => cidade.weatherID)));
         }
         break;
+      default:
     }
   }, [statusWeathers, statusCidade, dispatch]);
 

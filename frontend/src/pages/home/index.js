@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * Função componente que renderiza a tela de Home.
+ * @function Home
+ */
 export default function Home() {
   return (
     <div className="home">

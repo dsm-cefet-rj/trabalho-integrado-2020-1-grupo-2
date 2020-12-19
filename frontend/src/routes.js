@@ -13,8 +13,10 @@ import NotasCidade from './pages/notasCidade';
 import AdicionarCidade from './pages/adicionarCidade';
 import CriarNotaCidade from './pages/criarNotaCidade';
 
-// Faz nada por enquanto
-
+/**
+ * Verifica se o usuário está autenticado
+ * @function isAuthenticated
+ */
 function isAuthenticated() {
   const access_token = sessionStorage.getItem("access_token");
   if (access_token != null) {
@@ -38,6 +40,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   />
 );
 
+/**
+ * Gera as rotas da aplicação
+ * @function Routes
+ */
 export default function Routes() {
   return (
     <BrowserRouter>

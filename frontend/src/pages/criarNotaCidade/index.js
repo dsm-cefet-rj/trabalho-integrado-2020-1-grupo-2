@@ -8,6 +8,10 @@ import { selectCidadesIds } from '../../components/Cidade/slice';
 import Navbar from '../../components/Navbar';
 import CriarNota from '../../components/Nota/create';
 
+/**
+ * Função componente que renderiza a tela de criação de notas.
+ * @function CriarNotaCidade
+ */
 export default function CriarNotaCidade() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -19,6 +23,11 @@ export default function CriarNotaCidade() {
     return <div>Redirecionando para home</div>;
   }
 
+  /**
+ * Acionada quando o usuário clica no botão de criar
+ * @function handleCriarNota
+ * @param {Nota} nota - Nota a ser criada
+ */
   function handleCriarNota(nota){
     dispatch(addNotaServer(nota));
   }

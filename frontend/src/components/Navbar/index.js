@@ -6,6 +6,11 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import './styles.css';
 
+/**
+ * Renderiza a Navbar da aplicação
+ * @function Navbar
+ * @param {props} props - Informações para renderização como title
+ */
 export default function Navbar(props) {
   const { goBack } = useHistory();
 

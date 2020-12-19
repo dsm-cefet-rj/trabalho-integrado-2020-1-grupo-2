@@ -1,8 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+/**
+ * Função componente que renderiza o preview de uma nota
+ * @function NotaPreview
+ */
 export default function NotaPreview({ nota, index }) {
 
+  /**
+ * Formata as datas em dd/mm/aa
+ * @function dataAtualFormatada
+ * @param {string} date - Evento acionado pelo usuário
+ */
   function dataAtualFormatada(date){
     var data = new Date(date),
         dia  = data.getDate().toString(),

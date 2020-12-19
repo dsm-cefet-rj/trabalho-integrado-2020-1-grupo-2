@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * Função componente que renderiza informação temporal
+ * @function Wheater
+ * @param {props} props - Informações temporais
+ */
 export default function Weather(props) {
   const { weather } = props;
 

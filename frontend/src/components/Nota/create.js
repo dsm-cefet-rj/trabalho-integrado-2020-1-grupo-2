@@ -6,6 +6,10 @@ import { useForm } from 'react-hook-form';
 
 import SchemaNotas from './schema';
 
+/**
+ * Renderiza a criação de nota
+ * @function CriarNota
+ */
 export default function CriarNota(props) {
   const { handleCriarNota } = props;
   const { idCidade } = props;
@@ -19,18 +23,37 @@ export default function CriarNota(props) {
     resolver: yupResolver(SchemaNotas),
   })
 
+  /**
+ * Acionada quando o usuário digita no campo de dados da nota
+ * @function handleDataChange
+ * @param {Event} event - Evento acionado pelo usuário
+ */
   function handleDataChange(event) {
     setData(event.target.value);
   }
 
+  /**
+ * Acionada quando o usuário digita no campo de nome da nota
+ * @function handleNameChange
+ * @param {Event} event - Evento acionado pelo usuário
+ */
   function handleNameChange(event) {
     setName(event.target.value);
   }
 
+  /**
+ * Acionada quando o usuário digita no campo de visitas da nota
+ * @function handleVisitsChange
+ * @param {Event} event - Evento acionado pelo usuário
+ */
   function handleVisitsChange(event) {
     setVisits(event.target.value);
   }
 
+  /**
+ * Acionada quando o usuário clica em criar nota
+ * @function onSubmit
+ */
   function onSubmit() {
     handleCriarNota({
       name,

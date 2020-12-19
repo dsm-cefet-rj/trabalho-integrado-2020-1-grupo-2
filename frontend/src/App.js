@@ -6,6 +6,10 @@ import { Container } from '@material-ui/core';
 import store from './store';
 import './global.css';
 
+/**
+ * Gera a aplicação web
+ * @function App
+ */
 function App() {
   return (
     <Provider store={store}>
