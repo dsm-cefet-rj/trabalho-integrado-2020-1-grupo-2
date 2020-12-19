@@ -9,7 +9,7 @@ export default function Cidade(props) {
   const { id } = props.cidade;
 
   function renderWeatherInfos() {
-    if(!weather) return "Erro na chamada da API";
+    if(!weather || !weather.list) return "Erro na chamada da API";
     return weather.list.map((inf, idx) => (
       <Weather weather={inf} key={idx} />
     ));

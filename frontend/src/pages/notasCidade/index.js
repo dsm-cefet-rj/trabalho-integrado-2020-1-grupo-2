@@ -8,7 +8,7 @@ import NotaPreview from '../../components/Nota/preview';
 import Navbar from '../../components/Navbar';
 
 export default function NotasCidade() {
-  const notas = useSelector(selectAllNotas);
+  let   notas = useSelector(selectAllNotas);
   const statusNotas = useSelector(state => state.notas.status);
   const errorNotas = useSelector(state => state.notas.error);
 
@@ -26,10 +26,10 @@ export default function NotasCidade() {
       case 'failed':
         return <p>Error: {errorNotas}</p>;
       default:
-        let notasCidade = notas.filter(nota => nota.idCidade === parseInt(idCidade));
+        let notasCidade = notas.filter(nota => nota.idCidade === idCidade);
         if(notasCidade.length === 0) return <p>Sem notas adicionadas!</p>;
         return (
-          notas.map((nota, index) =>
+          notas.filter(nota => nota.id).map((nota, index) =>
             <NotaPreview
               nota={nota}
               key={index}

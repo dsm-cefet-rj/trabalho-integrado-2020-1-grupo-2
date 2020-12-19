@@ -61,7 +61,7 @@ export default function Dashboard() {
         break;
       case 'loaded':
         if(statusWeathers === 'not_loaded') {
-          dispatch(fetchWeathers(cidades.map(cidade => cidade.id)));
+          dispatch(fetchWeathers(cidades.map(cidade => cidade.weatherID)));
         }
         break;
     }

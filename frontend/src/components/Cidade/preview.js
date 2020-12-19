@@ -6,6 +6,7 @@ import Weather from '../Weather';
 export default function CidadePreview(props) {
   const { id, name } = props.cidade;
   const { weather, index, handleClickExcluirCidade } = props;
+  const todayWeather = weather?.list?.length > 0 ? weather.list[0] : null;
   
   return (
     <div id={`cityInfo${index}`}>
@@ -18,7 +19,7 @@ export default function CidadePreview(props) {
         </button>
         <Link to={`climacidade/${id}`} >{name}</Link>
       </div>
-      <Weather weather={weather?.list[0]} />
+      <Weather weather={todayWeather} />
     </div>
   );
 }

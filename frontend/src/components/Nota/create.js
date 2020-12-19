@@ -37,7 +37,6 @@ export default function CriarNota(props) {
       data,
       visits,
       idCidade,
-      created: Date.now()
     });
     history.push(`/notascidade/${idCidade}`);
   }

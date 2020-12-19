@@ -32,9 +32,9 @@ export default function AdicionarCidade(props) {
     if(!result?.list) return;
 
     setCities(result.list.map(city => ({
-      'id': city.id,
-      'name': city.name,
-      'latitude': city.coord.lat,
+      'weatherID': city.id,
+      'name':      city.name,
+      'latitude':  city.coord.lat,
       'longitude': city.coord.lon,
     })));
   }

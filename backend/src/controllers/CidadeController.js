@@ -33,7 +33,9 @@ module.exports = {
   async update(request, response, next) {
     try {
       const { id } = request.params;
-      const cidade = await Cidade.findByIdAndUpdate(
+      const cidade = await Cidade.findById(id);
+
+      cidade.updateOne(
         id,
         request.body,
         {new: true}
@@ -47,7 +49,9 @@ module.exports = {
   async destroy(request, response, next) {
     try {
       const { id } = request.params;
-      const cidade = await Cidade.findByIdAndRemove(id);
+      const cidade = await Cidade.findById(id);
+
+      cidade?.deleteOne();
 
       response.json(CidadeView.render(cidade));
     } catch(error) {

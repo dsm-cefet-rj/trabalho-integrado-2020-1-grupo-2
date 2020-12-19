@@ -14,7 +14,7 @@ export default function CriarNotaCidade() {
   const { idCidade } = useParams();
   const idsCidadesFound = useSelector(selectCidadesIds);
 
-  if(!idsCidadesFound.includes(parseInt(idCidade))) {
+  if(!idsCidadesFound.includes(idCidade)) {
     history.push('/');
     return <div>Redirecionando para home</div>;
   }
@@ -26,7 +26,7 @@ export default function CriarNotaCidade() {
   return (
     <div className="create">
       <Navbar title='Criar Nota' />
-      <CriarNota idCidade={parseInt(idCidade)} handleCriarNota={handleCriarNota}/>
+      <CriarNota idCidade={idCidade} handleCriarNota={handleCriarNota}/>
     </div>
   );
 }
