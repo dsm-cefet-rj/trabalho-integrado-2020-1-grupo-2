@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 describe("Cidade não existe no banco de dados", function() {
@@ -21,4 +21,11 @@ describe("Funcionalidade de nota de cidade", function() {
 
     test('Erro ao criar nota de cidade', () => { throw 'Not implemented yet' });
 
+<<<<<<< HEAD
 })
+=======
+    test('Superior ao máximo de caracteres da nota', () => { throw 'Not implemented yet' });
+
+})
+*/
+>>>>>>> 771245d22d8f8da5eb60d03dd360cd3812aa5b84

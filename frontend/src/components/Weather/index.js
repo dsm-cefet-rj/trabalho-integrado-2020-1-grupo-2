@@ -7,7 +7,7 @@ import React from 'react';
  */
 export default function Weather(props) {
   const { weather } = props;
-
+  //console.log("Weather:  \n"+ JSON.stringify(props));
   if(!weather) return "Erro na chamada da API";
   if(weather.cod === 429) return "Limite de chamadas atingido!";
   
