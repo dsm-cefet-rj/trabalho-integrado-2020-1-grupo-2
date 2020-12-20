@@ -34,10 +34,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-<<<<<<< HEAD
-=======
     "test1": "react-scripts -r @cypress/instrument-cra start",
->>>>>>> 771245d22d8f8da5eb60d03dd360cd3812aa5b84
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen --coverage --watchAll",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
