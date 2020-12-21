@@ -7,6 +7,12 @@ import '@testing-library/jest-dom/extend-expect';
 
 import ClimaCidade from './index';
 
+jest.mock("react-redux", () => ({
+    ...jest.requireActual("react-redux"),
+    useSelector: jest.fn(),
+    useDispatch: jest.fn( () => jest.fn((param) => param) )
+}));
+
 describe('Features de clima cidade', function(){
 	
 	test('acessa pagina de clima cidade', ()=>{

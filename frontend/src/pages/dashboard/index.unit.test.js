@@ -7,6 +7,13 @@ import '@testing-library/jest-dom/extend-expect';
 
 import Dashboard from './index';
 
+jest.mock("react-redux", () => ({
+    ...jest.requireActual("react-redux"),
+    useSelector: jest.fn(),
+    useDispatch: jest.fn( () => jest.fn((param) => param) )
+}));
+
+
 describe('Features de dashboard', function(){
 	
 	test('acessa pagina dashboard', ()=>{
