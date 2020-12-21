@@ -13,7 +13,7 @@ import './styles.css';
  */
 export default function Navbar(props) {
   const { goBack } = useHistory();
-
+  console.log("Navbar: " + JSON.stringify(props));
   return (
     <AppBar position='static'>
       <Toolbar className='navbar'>
