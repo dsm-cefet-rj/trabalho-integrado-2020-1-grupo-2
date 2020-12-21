@@ -1,73 +1,24 @@
-import React from "react";
+import React from 'react';
 import { Link } from "react-router-dom";
-import { render, screen } from "@testing-library/react";
-import { Router } from "react-router-dom";
-import { MemoryRouter } from "react-router-dom";
-import { useSelector } from "react-redux"; 
-import "@testing-library/jest-dom/extend-expect";
-import CriarNota from "./index";
-import { selectIds } from './../../components/Nota/slice';
-import userEvent from '@testing-library/user-event';
-import { addNotaServer } from '../../components/Nota/slice';
-import Navbar from '../../components/Navbar';
+import { render, screen } from '@testing-library/react';
+import { Router } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
+import '@testing-library/jest-dom/extend-expect';
 
-jest.mock("../../components/Cidade/slice", ()=>({
-    selectIds: jest.fn(() => mockAppState.cidades.cidades)
-}));
+import CriarNotaCidade from './index';
 
-jest.mock("react-redux", ()=>({
-    ...jest.requireActual("react-redux"),
-    useSelector: jest.fn(),
-    useDispatch: jest.fn( ()=> jest.fn( (param)=> param) )
-}));
+describe('Features de criar nota', function(){
+	
+	test('acessa pagina de criar nota', ()=>{
+		
+        render(<CriarNotaCidade />, { wrapper: MemoryRouter });
 
-const mockAppState = {
-    cidades:{
-        status: 'not_loaded',
-        error: null,
-        cidades: []
-    }
-}
-const idsCidadesFound = ["5fdd5790ea7336270ca2c4da", "5fde8fd213816b3f74a97c2c"];
-const mockIdCidade = ["5fdd5790ea7336270ca2c4da"]
+		expect(screen.getByText(/Nome/i)).toBeInTheDocument();
+		expect(screen.getByText(/Nota/i)).toBeInTheDocument();
+		expect(screen.getByText(/Visitas/i)).toBeInTheDocument();
+		expect(screen.getByText(/Criar/i)).toBeInTheDocument();
 
-describe("criar nota unit", function() {
+	});
+	
 
-    beforeEach(() => {
-        useSelector.mockImplementation(callback => {
-          return callback(mockAppState);
-        });
-      });
-
-      afterEach(() => {
-        useSelector.mockClear();
-        jest.clearAllTimers()
-      });
-    test("carrega tela de nota completa", () => {
-        render( <CriarNota  idCidade={mockIdCidade} /> , { wrapper: MemoryRouter }, idsCidadesFound);
-        expect(screen.getByText(/Nome/i)).toBeInTheDocument();
-        expect(screen.getByText(/Nota/i)).toBeInTheDocument();
-        expect(screen.getByText(/Visitas/i)).toBeInTheDocument();
-        expect(screen.getByText(/Conta/i)).toBeInTheDocument();
-        expect(screen.getByTextId("button")).toHaveTextContent("Criar");
-    });
-
-    // test("cria nota com sucesso", () => {
-    //     const mockCriarNotaHandler = jest.fn();
-    //     let nota = {nome: 'teste', nota:'nota de teste', visitas: 2};
-    //     let dom = render(<CriarNota idCidadesFound={mockIdCidadesFound} idCidade={mockIdCidade} nota={nota} onSubmit={mockCriarNotaHandler}></CriarNota>, { wrapper: MemoryRouter });
-    //     const leftClick = { button: 0 };
-    //     userEvent.click(dom.container.querySelector("#createCityNoteButton"),leftClick);
-    //     expect(mockCriarNotaHandler).toHaveBeenCalledTimes(1);
-    // });
-
-    // test("caracter inválido no campo de visitas", () => {
-    //     const mockCriarNotaHandler = jest.fn();
-    //     let nota = {nome: 'teste', nota:'nota de teste', visitas: 'a'};
-    //     let dom = render(<CriarNota idCidadesFound={mockIdCidadesFound} nota={nota} onSubmit={mockCriarNotaHandler}></CriarNota>, { wrapper: MemoryRouter });
-    //     const leftClick = { button: 0 };
-    //     userEvent.click(dom.container.querySelector("#createCityNoteButton"),leftClick);
-    //     expect(mockCriarNotaHandler).toHaveBeenCalledTimes(0);
-    //     expect(screen.getByText(/Não foi possível criar nota/i)).toBeInTheDocument();
-    // });
 });
