@@ -10,6 +10,7 @@ import { selectIds } from './../../components/Nota/slice';
 import userEvent from '@testing-library/user-event';
 import { addNotaServer } from '../../components/Nota/slice';
 import Navbar from '../../components/Navbar';
+import { selectCidadesIds } from '../../components/Cidade/slice';
 
 jest.mock("../../components/Cidade/slice", ()=>({
     selectIds: jest.fn(() => mockAppState.cidades.cidades)
