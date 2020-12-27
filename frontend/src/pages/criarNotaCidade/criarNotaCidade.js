@@ -2,11 +2,11 @@ import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { addNotaServer } from '../../components/Nota/slice';
-import { selectCidadesIds } from '../../components/Cidade/slice';
+import { addNotaServer } from '../../components/Nota/NotaSlice';
+import { selectCidadesIds } from '../../components/Cidade/CidadeSlice';
 
-import Navbar from '../../components/Navbar';
-import CriarNota from '../../components/Nota/create';
+import Navbar from '../../components/Navbar/Navbar';
+import CriarNota from '../../components/Nota/NotaCreate';
 
 /**
  * Função componente que renderiza a tela de criação de notas.

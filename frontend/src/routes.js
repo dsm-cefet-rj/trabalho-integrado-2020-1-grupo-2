@@ -1,17 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
-import Home from './pages/home';
-import Signup from './pages/signup';
-import SignupSucess from './pages/signupSucess';
-import Login from './pages/login';
-import Conta from './pages/conta';
-import Dashboard from './pages/dashboard';
-import ClimaCidade from './pages/climaCidade';
-import NotaCidade from './pages/notaCidade';
-import NotasCidade from './pages/notasCidade';
-import AdicionarCidade from './pages/adicionarCidade';
-import CriarNotaCidade from './pages/criarNotaCidade';
+import Home            from './pages/home/home';
+import Signup          from './pages/signup/signup';
+import SignupSucess    from './pages/signupSucess/signupSucess';
+import Login           from './pages/login/login';
+import Conta           from './pages/conta/conta';
+import Dashboard       from './pages/dashboard/dashboard';
+import ClimaCidade     from './pages/climaCidade/climaCidade';
+import NotaCidade      from './pages/notaCidade/notaCidade';
+import NotasCidade     from './pages/notasCidade/notasCidade';
+import AdicionarCidade from './pages/adicionarCidade/adicionarCidade';
+import CriarNotaCidade from './pages/criarNotaCidade/criarNotaCidade';
 
 /**
  * Verifica se o usuário está autenticado

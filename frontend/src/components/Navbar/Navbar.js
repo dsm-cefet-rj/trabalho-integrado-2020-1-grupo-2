@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
-import './styles.css';
+import './NavbarStyle.css';
 
 /**
  * Renderiza a Navbar da aplicação

@@ -2,11 +2,11 @@ import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { selectCidadesById } from '../../components/Cidade/slice';
-import { selectWeathersById } from '../../services/weather/slice';
+import { selectCidadesById } from '../../components/Cidade/CidadeSlice';
+import { selectWeathersById } from '../../services/weather/weatherSlice';
 
-import Navbar  from '../../components/Navbar';
-import Cidade  from '../../components/Cidade';
+import Navbar  from '../../components/Navbar/Navbar';
+import Cidade  from '../../components/Cidade/Cidade';
 
 /**
  * Função componente que renderiza a tela dos climas de uma cidade.

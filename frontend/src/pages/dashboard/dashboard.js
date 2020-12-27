@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteCidadeServer, fetchCidades, selectAllCidades } from '../../components/Cidade/slice';
-import { selectAllWeathers, fetchWeathers } from '../../services/weather/slice';
+import { deleteCidadeServer, fetchCidades, selectAllCidades } from '../../components/Cidade/CidadeSlice';
+import { selectAllWeathers, fetchWeathers } from '../../services/weather/weatherSlice';
 
-import CidadePreview from '../../components/Cidade/preview';
-import Navbar from '../../components/Navbar';
+import CidadePreview from '../../components/Cidade/CidadePreview';
+import Navbar from '../../components/Navbar/Navbar';
 
 /**
  * Função componente que renderiza a tela de Dashboard

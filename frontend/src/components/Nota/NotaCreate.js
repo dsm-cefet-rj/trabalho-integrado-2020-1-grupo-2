@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers';
 import { useForm } from 'react-hook-form';
 
-import SchemaNotas from './schema';
+import SchemaNotas from './NotaSchema';
 
 /**
  * Renderiza a criação de nota

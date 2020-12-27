@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
-import { addCidadeServer } from '../../components/Cidade/slice';
+import { addCidadeServer } from '../../components/Cidade/CidadeSlice';
 
 import { findCity } from '../../services/weather/weather';
 
-import Navbar from '../../components/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 
 /**
  * Função componente que renderiza a tela de adicionar cidades.

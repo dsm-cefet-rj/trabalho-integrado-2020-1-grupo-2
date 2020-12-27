@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAllNotas, fetchNotas, deleteNotaServer } from '../../components/Nota/slice';
+import { selectAllNotas, fetchNotas, deleteNotaServer } from '../../components/Nota/NotaSlice';
 
-import NotaPreview from '../../components/Nota/preview';
-import Navbar from '../../components/Navbar';
+import NotaPreview from '../../components/Nota/NotaPreview';
+import Navbar from '../../components/Navbar/Navbar';
 
 /**
  * Função componente que renderiza todas as notas de uma cidade.
