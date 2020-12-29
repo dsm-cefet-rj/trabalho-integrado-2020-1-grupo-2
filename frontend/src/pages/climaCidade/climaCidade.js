@@ -17,7 +17,7 @@ export default function ClimaCidade() {
   const { idCidade }  = useParams();
 
   const cidadeFound = useSelector(state => selectCidadesById(state, idCidade));
-  const weatherFound = useSelector(state => selectWeathersById(state, cidadeFound.weatherID));
+  const weatherFound = useSelector(state => selectWeathersById(state, cidadeFound?.weatherID));
 
   if(!cidadeFound) {
     history.push('/');

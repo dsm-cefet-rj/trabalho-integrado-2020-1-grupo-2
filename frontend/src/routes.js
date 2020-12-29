@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import Home            from './pages/home/home';
 import Signup          from './pages/signup/signup';
@@ -13,32 +14,33 @@ import NotasCidade     from './pages/notasCidade/notasCidade';
 import AdicionarCidade from './pages/adicionarCidade/adicionarCidade';
 import CriarNotaCidade from './pages/criarNotaCidade/criarNotaCidade';
 
-/**
- * Verifica se o usuário está autenticado
- * @function isAuthenticated
- */
-function isAuthenticated() {
-  const access_token = sessionStorage.getItem("access_token");
-  if (access_token != null) {
-    return true;
-  } else {
-    // return false
-    return true;
-  }
-}
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render = { props => (
-      isAuthenticated() ? (
-        <Component {...props} />
-      ) : (
-        <Redirect to={{ pathname: '/', state: { from: props.location } }} />
-      )
-    )}
-  />
-);
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  const statusCidade = useSelector(state => state.cidades.status);
+    /**
+   * Verifica se o usuário está autenticado
+   * @function isAuthenticated
+   */
+  function isAuthenticated() {
+    if (statusCidade === 'loaded') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  return (
+    <Route
+      {...rest}
+      render = { props => (
+        isAuthenticated() ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+        )
+      )}
+    />
+  )
+};
 
 /**
  * Gera as rotas da aplicação

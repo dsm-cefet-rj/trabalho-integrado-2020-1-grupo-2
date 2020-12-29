@@ -8,6 +8,7 @@ async function client(endpoint, { body, ...customConfig } = {}) {
       ...headers,
       ...customConfig.headers,
     },
+    credentials: 'include',
   }
 
   if (body) {
