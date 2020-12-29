@@ -28,6 +28,7 @@ module.exports = {
         ...request.body,
         created: Date.now(),
       });
+      
       const cidade = await Cidade.findById(nota.idCidade);
 
       await cidade?.updateOne({

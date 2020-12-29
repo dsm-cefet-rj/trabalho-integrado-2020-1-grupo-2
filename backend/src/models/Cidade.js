@@ -17,6 +17,10 @@ const CidadeSchema = mongoose.Schema({
     type:     Number,
     required: true,
   },
+  idUsuario: {
+    type:     mongoose.Types.ObjectId,
+    required:  true,
+  },
   notas: [{
     type:     mongoose.Types.ObjectId,
     ref:     'Nota',

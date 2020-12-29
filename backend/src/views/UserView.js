@@ -1,8 +1,8 @@
 module.exports = {
   render(user) {
     return {
-      id:    user?._id,
-      email: user?.email,
+      id:       user?._id,
+      googleID: user.googleID,
     };
   },
   renderMany(users){

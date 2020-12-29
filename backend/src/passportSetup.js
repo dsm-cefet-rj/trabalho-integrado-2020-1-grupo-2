@@ -1,25 +1,25 @@
 const config         = require('./config.json');
 const passport       = require('passport');
-const GoogleStrategy = require('passport-google-oauth').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User           = require('./models/User');
 
 passport.use(new GoogleStrategy(
   {
-    consumerKey:    config.OAuth.google.clientID,
-    consumerSecret: config.OAuth.google.clientSecret,
-    callbackURL:    config.OAuth.google.callbackURL,
+    clientID:     config.OAuth.google.clientID,
+    clientSecret: config.OAuth.google.clientSecret,
+    callbackURL:  config.OAuth.google.callbackURL,
   },
   async function(accessToken, refreshToken, profile, done) {
-    const user = await User.findById(profile.id);
+    const user = await User.findOne({ googleID: profile.id });
 
     if(user) return done(null, user);
 
-    user = await User.create({
+    const newUser = await User.create({
       googleID: profile.id,
-      email:    profile.email,
+      email:    profile.emails[0].value,
     });
 
-    done(null, user);
+    done(null, newUser);
   }
 ));
 

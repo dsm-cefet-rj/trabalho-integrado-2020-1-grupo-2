@@ -25,7 +25,10 @@ mongoose.connect(
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: /localhost/,
+  credentials: true,
+}));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.json());
 app.use(cookieSession({

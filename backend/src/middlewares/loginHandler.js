@@ -2,6 +2,6 @@ module.exports = (request, response, next) => {
   if (request.user) {
     next();
   } else {
-    response.sendStatus(401);
+    response.status(401).json({ error: '401: Unauthorized'});
   }
 }

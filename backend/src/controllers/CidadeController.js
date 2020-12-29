@@ -1,10 +1,11 @@
+const User       = require('../models/User');
 const Cidade     = require('../models/Cidade');
 const CidadeView = require('../views/CidadeView');
 
 module.exports = {
   async index(request, response, next) {
     try {
-      const cidades = await Cidade.find();
+      const cidades = await Cidade.find({idUsuario: request.user._id});
 
       response.json(CidadeView.renderMany(cidades));
     } catch(error) {
@@ -23,8 +24,16 @@ module.exports = {
   },
   async store(request, response, next) {
     try {
-      const cidade = await Cidade.create(request.body);
-      
+      const cidade = await Cidade.create({
+        ...request.body,
+        idUsuario: request.user._id,
+      });
+
+      const user   = await User.findById(request.user._id);
+
+      await user?.updateOne({
+        cidades: [...user.cidades, cidade._id],
+      });
       response.json(CidadeView.render(cidade));
     } catch(error) {
       next(error);
