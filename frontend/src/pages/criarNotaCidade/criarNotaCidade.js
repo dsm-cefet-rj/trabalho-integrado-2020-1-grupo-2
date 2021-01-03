@@ -34,7 +34,7 @@ export default function CriarNotaCidade() {
 
   return (
     <div className="create">
-      <Navbar title='Criar Nota' goBackPath={`/notascidade/${idCidade}`} />
+      <Navbar title='Criar Anotação' goBackPath={`/notascidade/${idCidade}`} />
       <CriarNota idCidade={idCidade} handleCriarNota={handleCriarNota}/>
     </div>
   );

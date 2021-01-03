@@ -8,6 +8,8 @@ import { findCity } from '../../services/weather/weather';
 
 import Navbar from '../../components/Navbar/Navbar';
 
+import './adicionarCidadeStyle.css';
+
 /**
  * Função componente que renderiza a tela de adicionar cidades.
  * @function AdicionarCidade
@@ -56,6 +58,7 @@ export default function AdicionarCidade() {
       'name':      city.name,
       'latitude':  city.coord.lat,
       'longitude': city.coord.lon,
+      'pais':      city.sys.country,
     })));
   }
 
@@ -66,7 +69,7 @@ export default function AdicionarCidade() {
         key={index}
         onClick={() => handleClickResult(city)}
       >
-        {city.name}
+        {`${city.name}, ${city.pais}, la: ${city.latitude}, lo: ${city.longitude}`}
       </button>
     )));
   }, [cities]);

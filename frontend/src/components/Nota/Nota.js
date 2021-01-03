@@ -103,7 +103,7 @@ export default function Nota(props) {
         id='deleteCityNoteButton'
         onClick={() => handleExcluirNota(nota.id)}
       >
-        Deletar nota
+        Deletar anotação
       </button>
     </div>
   );

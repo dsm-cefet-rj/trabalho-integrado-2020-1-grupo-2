@@ -1,0 +1,8 @@
+.adicionar-cidade .results {
+  display: flex;
+  flex-direction: column;
+}
+
+.adicionar-cidade .results button {
+  margin: 5px;
+}

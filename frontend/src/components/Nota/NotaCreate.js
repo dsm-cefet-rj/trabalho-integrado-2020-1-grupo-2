@@ -87,7 +87,7 @@ export default function CriarNota(props) {
           <textarea
             id='cityNote'
             type='text'
-            placeholder='Digite sua nota'
+            placeholder='Digite sua anotação'
             value={data}
             onChange={handleDataChange}
             ref={register}

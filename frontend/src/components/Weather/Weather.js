@@ -1,4 +1,5 @@
-import React from 'react';
+import React        from 'react';
+import {formatData} from '../../utils';
 
 /**
  * Função componente que renderiza informação temporal
@@ -13,16 +14,16 @@ export default function Weather(props) {
   
   return(
     <div className="weather">
-      <p>{weather.dt_txt}</p>
+      <p>{formatData(weather.dt_txt)}</p>
       <div className="info">
         <div className="wind-speed">
-          <p>Velocidade do vento: {weather.wind?.speed || 'Sem informações'}</p>
+          <p>Velocidade do vento: {weather.wind?.speed+'m/s' || 'Sem informações'}</p>
         </div>
         <div className="temperature">
-          <p>Temperatura: {weather.main ? (weather.main.temp-273.15).toPrecision(3) : 'Sem informações'}</p>
+          <p>Temperatura: {weather.main ? (weather.main.temp-273.15).toPrecision(3)+' Cº' : 'Sem informações'}</p>
         </div>
         <div className="humidity">
-          <p>Umidade: {weather.main?.humidity || 'Sem informações'}</p>
+          <p>Umidade: {weather.main?.humidity+'%' || 'Sem informações'}</p>
         </div>
       </div>
     </div>

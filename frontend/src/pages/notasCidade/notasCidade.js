@@ -74,7 +74,7 @@ export default function NotasCidade() {
   return (
     <div className='notas'>
       <Navbar
-        title='Notas'
+        title='Anotações'
         goBackPath={`/climacidade/${idCidade}`}
       />
       <Link
