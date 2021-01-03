@@ -68,7 +68,7 @@ export default function NotasCidade() {
 
   return (
     <div className="notas">
-      <Navbar title='Notas' />
+      <Navbar title='Notas' goBackPath={`/climacidade/${idCidade}`} />
       <Link
         id='createCityNoteButton'
         to={`/notacidade/criar/${idCidade}`}

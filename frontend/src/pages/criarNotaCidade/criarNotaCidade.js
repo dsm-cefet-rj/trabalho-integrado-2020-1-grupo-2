@@ -19,7 +19,7 @@ export default function CriarNotaCidade() {
   const idsCidadesFound = useSelector(selectCidadesIds);
 
   if(!idsCidadesFound.includes(idCidade)) {
-    history.push('/');
+    history.push('/dashboard');
     return <div>Redirecionando para home</div>;
   }
 
@@ -34,7 +34,7 @@ export default function CriarNotaCidade() {
 
   return (
     <div className="create">
-      <Navbar title='Criar Nota' />
+      <Navbar title='Criar Nota' goBackPath={`/notascidade/${idCidade}`} />
       <CriarNota idCidade={idCidade} handleCriarNota={handleCriarNota}/>
     </div>
   );

@@ -48,7 +48,7 @@ export default function NotaCidade() {
 
   return (
     <div className="notacidade">
-      <Navbar title={notaFound.name} />
+      <Navbar title={notaFound.name} goBackPath={`/notascidade/${notaFound.idCidade}`} />
       <Nota
         nota={notaFound}
         handleExcluirNota={handleExcluirNota}

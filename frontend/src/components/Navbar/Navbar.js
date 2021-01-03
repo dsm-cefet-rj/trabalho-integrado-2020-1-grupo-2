@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import HomeIcon      from '@material-ui/icons/Home';
 
 import './NavbarStyle.css';
 
@@ -13,7 +14,7 @@ import './NavbarStyle.css';
  * @param {props} props - Informações para renderização como title
  */
 export default function Navbar(props) {
-  const { goBack } = useHistory();
+  const history = useHistory();
   const statusCidade = useSelector(state => state.cidades.status);
 
   function handleClickLogin() {
@@ -24,12 +25,31 @@ export default function Navbar(props) {
     }
   }
 
+  function generateGoBackButton(goBackPath) {
+    if(!goBackPath) return;
+    return (
+      <IconButton id='goBackButton' type='button' onClick={() => history.push(goBackPath)} edge='start' color='inherit'>
+        <ArrowBackIcon />
+      </IconButton>
+    );
+  }
+
+  function generateDashboardButton(isDashboard = false) {
+    if(isDashboard) return;
+    return (
+      <IconButton id='goToDashboardButton' type='button' onClick={() => history.push('/dashboard')} edge='start' color='inherit'>
+        <HomeIcon />
+      </IconButton>
+    );
+  }
+
   return (
     <AppBar position='static'>
       <Toolbar className='navbar'>
-        <IconButton id='goBackButton' type='button' onClick={goBack} edge='start' color='inherit'>
-          <ArrowBackIcon />
-        </IconButton>
+        <div className="navButtons">
+          {generateGoBackButton(props.goBackPath)}
+          {generateDashboardButton(props.isDashboard)}
+        </div>
         <Typography variant='h6'>{props.title}</Typography>
         <Button color='inherit' onClick={handleClickLogin}>{
           statusCidade === 'loaded' ? 'Logout' : 'Login'
