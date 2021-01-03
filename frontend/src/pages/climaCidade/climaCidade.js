@@ -26,7 +26,7 @@ export default function ClimaCidade() {
 
   return (
     <div className='clima-cidade'>
-      <Navbar title={cidadeFound.name} goBackPath='/dashboard' />
+      <Navbar title={cidadeFound.name} />
       <Cidade cidade={cidadeFound} weather={weatherFound} />
     </div>
   );
