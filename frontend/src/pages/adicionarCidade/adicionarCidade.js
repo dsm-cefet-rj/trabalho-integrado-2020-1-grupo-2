@@ -71,6 +71,13 @@ export default function AdicionarCidade() {
     )));
   }, [cities]);
 
+  function handlePressEnter(event) {
+    if(event.charCode === 13) {
+      console.log({input, charCode: event.charCode})
+      handleClickSearch(input);
+    }
+  }
+
   return (
     <div className='adicionar-cidade'>
       <Navbar title='Adicionar Cidade'/>
@@ -86,6 +93,7 @@ export default function AdicionarCidade() {
           type='text'
           placeholder='pesquise uma cidade'
           onChange={handleInputChange}
+          onKeyPress={handlePressEnter}
         ></input>
         <div className="results">
           {renderCities[0] ? renderCities : 'sem resultados'}

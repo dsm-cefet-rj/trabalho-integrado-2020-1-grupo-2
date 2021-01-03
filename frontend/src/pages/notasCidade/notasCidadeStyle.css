@@ -1,0 +1,19 @@
+.bottomButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 10px;
+  width: 70%;
+  left: 15%;
+  display: flex;
+  justify-content: center;
+  align-items : center;
+}
+
+#createButton {
+  margin-left: 15px;
+}

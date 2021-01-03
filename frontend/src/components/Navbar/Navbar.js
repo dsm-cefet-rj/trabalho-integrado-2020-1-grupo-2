@@ -44,13 +44,13 @@ export default function Navbar(props) {
   }
 
   return (
-    <AppBar position='static'>
+    <AppBar position='fixed'>
       <Toolbar className='navbar'>
-        <div className="navButtons">
+        <div className='navButtons'>
           {generateGoBackButton(props.goBackPath)}
           {generateDashboardButton(props.isDashboard)}
         </div>
-        <Typography variant='h6'>{props.title}</Typography>
+        <Typography variant='h4'>{props.title}</Typography>
         <Button color='inherit' onClick={handleClickLogin}>{
           statusCidade === 'loaded' ? 'Logout' : 'Login'
         }</Button>

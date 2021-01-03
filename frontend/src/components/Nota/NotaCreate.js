@@ -6,6 +6,8 @@ import { useForm } from 'react-hook-form';
 
 import SchemaNotas from './NotaSchema';
 
+import './NotaStyle.css';
+
 /**
  * Renderiza a criação de nota
  * @function CriarNota
@@ -77,7 +79,7 @@ export default function CriarNota(props) {
             ref={register}
             name='name'
           ></input>
-          &nbsp;<span>{errors.name?.message}</span>
+          &nbsp;<p>{errors.name?.message}</p>
         </label>
         <label>
           Nota:
@@ -91,7 +93,7 @@ export default function CriarNota(props) {
             name='data'
           ></textarea>
         </label>
-        &nbsp;<span>{errors.data?.message}</span>
+        &nbsp;<p>{errors.data?.message}</p>
         <label>
           Visitas:
           <input
@@ -102,7 +104,7 @@ export default function CriarNota(props) {
             ref={register}
             name='visits'
           ></input>
-          &nbsp;<span>{errors.visits?.message}</span>
+          &nbsp;<p>{errors.visits?.message}</p>
         </label>
         <button
           id='createCityNoteButton'

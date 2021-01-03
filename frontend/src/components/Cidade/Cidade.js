@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Weather from '../Weather/Weather';
+import Weather   from '../Weather/Weather';
+import BottomBar from '../BottomBar/BottomBar';
 
 /**
  * Renderiza uma cidade
@@ -26,7 +27,9 @@ export default function Cidade(props) {
   return (
     <div className="cidade">
       {renderWeatherInfos()}
-      <Link id="cityNotesButton" to={`/notascidade/${id}`}>Notas</Link>
+      <BottomBar elements={
+        <Link id="cityNotesButton" to={`/notascidade/${id}`}>Visualizar anotações</Link>
+      }/>
     </div>
   );
 }

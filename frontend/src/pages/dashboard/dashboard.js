@@ -7,6 +7,7 @@ import { selectAllWeathers, fetchWeathers } from '../../services/weather/weather
 
 import CidadePreview from '../../components/Cidade/CidadePreview';
 import Navbar from '../../components/Navbar/Navbar';
+import BottomBar from "../../components/BottomBar/BottomBar";
 
 /**
  * Função componente que renderiza a tela de Dashboard
@@ -91,8 +92,10 @@ export default function Dashboard() {
     <div className="dashboard">
       <Navbar title='Dashboard' isDashboard={true} />
       {renderResponse()}
-      <Link id='goToaddCityButton' to='/adicionarcidade'>Adicionar Cidade</Link>
-      <button id='deleteAllCitiesButton' type='button' onClick={handleClickExcluirTodasCidades}>Deletar Todas as Cidades</button>
+      <BottomBar elements={[
+        <Link id='goToaddCityButton' to='/adicionarcidade'>Adicionar Cidade</Link>,
+        <button id='deleteAllCitiesButton' type='button' onClick={handleClickExcluirTodasCidades}>Deletar Todas as Cidades</button>
+      ]} />
     </div>
   );
 }

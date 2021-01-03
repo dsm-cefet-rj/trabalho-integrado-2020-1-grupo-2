@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
+import { Typography } from '@material-ui/core';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllNotas, fetchNotas, deleteNotaServer } from '../../components/Nota/NotaSlice';
 
 import NotaPreview from '../../components/Nota/NotaPreview';
 import Navbar from '../../components/Navbar/Navbar';
+
+import './notasCidadeStyle.css';
 
 /**
  * Função componente que renderiza todas as notas de uma cidade.
@@ -67,13 +72,21 @@ export default function NotasCidade() {
   }, [notas, statusNotas, dispatch]);
 
   return (
-    <div className="notas">
-      <Navbar title='Notas' goBackPath={`/climacidade/${idCidade}`} />
+    <div className='notas'>
+      <Navbar
+        title='Notas'
+        goBackPath={`/climacidade/${idCidade}`}
+      />
       <Link
-        id='createCityNoteButton'
-        to={`/notacidade/criar/${idCidade}`}
+          id='createCityNoteButton'
+          to={`/notacidade/criar/${idCidade}`}
       >
-        Criar nota
+      <button className='bottomButton'>
+        <Typography variant='h5'>Adicionar Anotação</Typography>
+        <Fab aria-label="add" size='small' id='createButton'>
+          <AddIcon />
+        </Fab>
+      </button>
       </Link>
       {renderServerResponse()}
     </div>
