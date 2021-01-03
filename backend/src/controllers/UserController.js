@@ -13,8 +13,7 @@ module.exports = {
   },
   async show(request, response, next) {
     try {
-      const { id } = request.params;
-      const user   = await User.findById(id).populate('cidades');
+      const user = request.user;
 
       response.json(UserView.render(user));
     } catch(error) {

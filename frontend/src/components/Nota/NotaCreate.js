@@ -49,6 +49,7 @@ export default function CriarNota(props) {
  * @param {Event} event - Evento acionado pelo usuário
  */
   function handleVisitsChange(event) {
+    if(event.target.value <= 0) return setVisits(0);
     setVisits(event.target.value);
   }
 

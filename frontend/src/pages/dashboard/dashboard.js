@@ -51,7 +51,10 @@ export default function Dashboard() {
       case 'loading':
         return (<p>Carregando cidades...</p>);
       case 'failed':
-        return (<p>Error: {errorCidade}</p>);
+        if(errorCidade === 'Unauthorized') return (
+          <p>Usuario não logado, fazer o login.</p>
+        );
+        return (<p>error: {errorCidade}</p>);
       case 'loaded':
         if(cidades.length === 0) return (
           <p>Sem cidades adicionadas</p>

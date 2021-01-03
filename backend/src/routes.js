@@ -42,7 +42,7 @@ routes.put   ('/notas/:id',   loginHandler, NotaController.update    );
 routes.delete('/notas/:id',   loginHandler, NotaController.destroy   );
 
 routes.get   ('/users',       loginHandler, UserController.index     );
-routes.get   ('/users/:id',   loginHandler, UserController.show      );
+routes.get   ('/user',        loginHandler, UserController.show      );
 routes.post  ('/users',       loginHandler, UserController.store     );
 routes.put   ('/users/:id',   loginHandler, UserController.update    );
 routes.delete('/users/:id',   loginHandler, UserController.destroy   );
