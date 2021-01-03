@@ -27,7 +27,6 @@ export default function AdicionarCidade() {
  * @param {Event} event - Evento acionado pelo usuário.
  */
   function handleInputChange(event) {
-    if(/[^a-zA-Z\s\-]/.test(event.target.value)) return window.alert('Caractere inválido!');
     if(event.target.value.length > 86) return window.alert('Limite de caracteres atingindo!');
     setInput(event.target.value);
   }
@@ -40,7 +39,7 @@ export default function AdicionarCidade() {
  */
   function handleClickResult(city) {
     dispacth(addCidadeServer(city));
-    history.push('/dashboard');
+    window.location.href = 'http://localhost:3000/dashboard';
   }
 
   /**
