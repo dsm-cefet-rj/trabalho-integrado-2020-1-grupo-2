@@ -1,6 +1,8 @@
 import React        from 'react';
 import {formatData} from '../../utils';
 
+import './WeatherStyle.css';
+
 /**
  * Função componente que renderiza informação temporal
  * @function Wheater
@@ -19,6 +21,12 @@ export default function Weather(props) {
       <div className="info">
         <div className="temperature">
           <p>{weather.main ? (weather.main.temp-273.15).toPrecision(3)+' Cº' : 'Sem informações'}</p>
+        </div>
+        <div className="wind-speed">
+          <p>Velocidade do vento: {weather.wind?.speed+'m/s' || 'Sem informações'}</p>
+        </div>
+        <div className="humidity">
+          <p>Umidade: {weather.main?.humidity+'%' || 'Sem informações'}</p>
         </div>
       </div>
     </div>

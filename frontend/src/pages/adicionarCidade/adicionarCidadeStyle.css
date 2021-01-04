@@ -1,8 +1,22 @@
 .adicionar-cidade .results {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .adicionar-cidade .results button {
   margin: 5px;
+}
+
+.adicionar-cidade .search-box {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+#addCityInput {
+  margin-right: 10px;
+  height: 30px;
+  width: 300px;
 }

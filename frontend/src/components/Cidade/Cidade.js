@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Weather   from '../Weather/Weather';
-import BottomBar from '../BottomBar/BottomBar';
+import WeatherFull   from '../Weather/WeatherFull';
+import BottomBar     from '../BottomBar/BottomBar';
+
+import { Button } from '@material-ui/core';
+
+import './CidadeStyle.css';
 
 /**
  * Renderiza uma cidade
@@ -20,7 +24,7 @@ export default function Cidade(props) {
   function renderWeatherInfos() {
     if(!weather || !weather.list) return "Erro na chamada da API";
     return weather.list.map((inf, idx) => (
-      <Weather weather={inf} key={idx} />
+      <WeatherFull weather={inf} key={idx} />
     ));
   }
 
@@ -28,7 +32,7 @@ export default function Cidade(props) {
     <div className="cidade">
       {renderWeatherInfos()}
       <BottomBar elements={
-        <Link id="cityNotesButton" to={`/notascidade/${id}`}>Visualizar anotações</Link>
+        <Button variant='contained' color='primary' ><Link id="cityNotesButton" to={`/notascidade/${id}`}>Visualizar anotações</Link></Button>
       }/>
     </div>
   );

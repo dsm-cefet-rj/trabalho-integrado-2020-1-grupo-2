@@ -9,6 +9,13 @@ import CidadePreview from '../../components/Cidade/CidadePreview';
 import Navbar from '../../components/Navbar/Navbar';
 import BottomBar from "../../components/BottomBar/BottomBar";
 
+import { Button } from '@material-ui/core';
+
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
+
+import './dashboardStyle.css';
+
 /**
  * Função componente que renderiza a tela de Dashboard
  * @function Dashboard
@@ -29,7 +36,8 @@ export default function Dashboard() {
  * @param {string} id - id da cidade a ser deletada
  */
   function handleClickExcluirCidade(id) {
-    dispatch(deleteCidadeServer(id));
+    let response = window.confirm('Deseja deletar a cidade?');
+    if(response) dispatch(deleteCidadeServer(id));
   }
 
   /**
@@ -38,7 +46,7 @@ export default function Dashboard() {
  */
   function handleClickExcluirTodasCidades() {
     let response = window.confirm('Excluir todas as cidades?');
-    if(response) for(let cidade of cidades) handleClickExcluirCidade(cidade.id);
+    if(response) for(let cidade of cidades) dispatch(deleteCidadeServer(cidade.id));
   }
 
   /**
@@ -96,8 +104,8 @@ export default function Dashboard() {
       <Navbar title='Dashboard' isDashboard={true} />
       {renderResponse()}
       <BottomBar elements={[
-        <Link id='goToaddCityButton' to='/adicionarcidade'>Adicionar Cidade</Link>,
-        <button id='deleteAllCitiesButton' type='button' onClick={handleClickExcluirTodasCidades}>Deletar Todas as Cidades</button>
+        <Button startIcon={<AddIcon />} variant='contained' color='primary' ><Link id='goToaddCityButton' to='/adicionarcidade'>Adicionar Cidade</Link></Button>,
+        <Button variant='contained' startIcon={<DeleteIcon htmlColor='white' />} id='deleteAllCitiesButton' type='button' onClick={handleClickExcluirTodasCidades}>Deletar Todas as Cidades</Button>
       ]} />
     </div>
   );

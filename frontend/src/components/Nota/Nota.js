@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import BottomBar from '../BottomBar/BottomBar'
+
 /**
  * Função componente que renderiza uma nota
  * @function Nota
@@ -62,17 +64,6 @@ export default function Nota(props) {
 
   return (
     <div className='nota'>
-      <div className='nota-options'>
-        <button id='editCityNoteButton' onClick={handleClickEditButton}>
-          {editMode ? 'Visualizar' : 'Editar'}
-        </button>
-        <button
-          id='saveCityNoteButton'
-          onClick={handleClickSaveButton}
-        >
-          Salvar
-        </button>
-      </div>
       <div className='nota-container'>
         {editMode ? (
           <textarea
@@ -99,12 +90,23 @@ export default function Nota(props) {
           <p>{visits}</p>
         )}
       </div>
-      <button
+      <BottomBar elements={[
+        <button id='editCityNoteButton' onClick={handleClickEditButton}>
+          {editMode ? 'Visualizar' : 'Editar'}
+        </button>,
+        <button
+          id='saveCityNoteButton'
+          onClick={handleClickSaveButton}
+        >
+          Salvar
+        </button>,
+        <button
         id='deleteCityNoteButton'
         onClick={() => handleExcluirNota(nota.id)}
       >
         Deletar anotação
-      </button>
+      </button>,
+      ]}/>
     </div>
   );
 }

@@ -1,0 +1,36 @@
+.city-card {
+  margin: auto;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #D9C2BC;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.city-card .header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: #E6D7D5;
+}
+
+.city-card .deleteCity {
+  background-color: #FA4B40;
+  height: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+#cityNotesButton {
+  text-decoration: none;
+  color: white;
+}
+
+.city-card .nome-cidade {
+  font-size: 22px;
+  text-decoration: none;
+}

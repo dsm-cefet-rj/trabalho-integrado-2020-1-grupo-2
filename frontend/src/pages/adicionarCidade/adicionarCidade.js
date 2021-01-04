@@ -8,6 +8,8 @@ import { findCity } from '../../services/weather/weather';
 
 import Navbar from '../../components/Navbar/Navbar';
 
+import { Button } from '@material-ui/core';
+
 import './adicionarCidadeStyle.css';
 
 /**
@@ -85,12 +87,14 @@ export default function AdicionarCidade() {
     <div className='adicionar-cidade'>
       <Navbar title='Adicionar Cidade'/>
       <div className='search-box'>
-        <button
+        <Button
+          color='primary'
+          variant='contained'
           id='searchCityButton'
           onClick={() => handleClickSearch(input)}
         >
           Pesquisar
-        </button>
+        </Button>
         <input
           id='addCityInput'
           type='text'
@@ -98,9 +102,9 @@ export default function AdicionarCidade() {
           onChange={handleInputChange}
           onKeyPress={handlePressEnter}
         ></input>
-        <div className="results">
-          {renderCities[0] ? renderCities : 'sem resultados'}
-        </div>
+      </div>
+      <div className="results">
+        {renderCities[0] ? renderCities : 'sem resultados'}
       </div>
     </div>
   );
